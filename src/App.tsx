@@ -7,7 +7,8 @@ import { ApolloProvider } from "react-apollo";
 import './App.css';
 
 const client = new ApolloClient({
-    uri: "http://localhost:4000"
+    // uri: "http://localhost:4000"
+    uri: "https://company-turnover-server.herokuapp.com/"
 });
 
 interface MatchParams {
