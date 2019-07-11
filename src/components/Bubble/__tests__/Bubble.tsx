@@ -1,27 +1,9 @@
 import React from 'react'
 import * as enzyme from 'enzyme';
-import Bubble from '../components/Bubble'
+import Bubble from '../Bubble'
 import toJson from 'enzyme-to-json'
 import { BrowserRouter as Router } from 'react-router-dom';
-
-export const mockData = [
-    {
-        "label": "BEETROOT SE",
-        "r": 121.13628688382354,
-        "value": 14674,
-        "x": 0,
-        "y": 0,
-    },
-    {
-        "label": "GREEN",
-        "r": 89.48184173339304,
-        "value": 8007,
-        "x": 0,
-        "y": 0,
-    }
-]
-
-export const mockSize = [100,100]
+import { mockData, mockSize } from '../../../test-utils/testHelpers'
 
 test('Bubble snapshot matches', () => {
     const bubble = enzyme.shallow(<Bubble data={mockData} size={mockSize} />);

@@ -1,18 +1,7 @@
 import React from 'react'
 import * as d3 from 'd3'
-import { formatInPLN } from '../utils/formatInPLN'
-
-type Data = { r: number, x: number, y: number, value: number, label: string }
-
-type Props = {
-    data: Array<Data>
-    size: Array<number>
-}
-type State = {
-    width: number
-    height: number
-    data: Array<Data>
-}
+import { formatInPLN } from '../../utils/formatInPLN'
+import { Props, State } from "./types"
 
 export default class Bubble extends React.Component<Props,State> {
     private svgRef: React.RefObject<SVGSVGElement>;

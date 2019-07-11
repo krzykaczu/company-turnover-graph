@@ -1,5 +1,4 @@
 import {
-    createStyles,
     Grid,
     Paper,
     Table,
@@ -7,35 +6,13 @@ import {
     TableCell,
     TableHead,
     TableRow,
-    Theme,
-    withStyles,
-    WithStyles,
+    withStyles
 } from '@material-ui/core';
 import { Link } from 'react-router-dom'
-import { formatInPLN } from '../utils/formatInPLN'
+import { formatInPLN } from '../../utils/formatInPLN'
 import * as React from 'react';
-
-const styles = (theme: Theme) =>
-    createStyles({
-        paper: {
-            marginTop: theme.spacing.unit * 3,
-            overflowX: 'auto',
-        },
-        table: {
-            minWidth: '80vw'
-        },
-        link: {
-            textDecoration: 'none',
-            color: 'rgba(0, 0, 0, 0.54)',
-            '&:visited': {
-                color: 'rgba(0, 0, 0, 0.54)'
-            }
-        }
-    });
-
-interface Props extends WithStyles<typeof styles> {
-    data: Array<{ id: string, issueDate: string, net: number}>
-}
+import { Props } from "./types"
+import { styles } from "./styles"
 
 const InvoiceTable = (props: Props) => {
     const { classes, data } = props;

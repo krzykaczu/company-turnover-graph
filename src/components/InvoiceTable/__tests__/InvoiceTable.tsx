@@ -1,14 +1,9 @@
 import React from 'react'
 import * as enzyme from 'enzyme';
-import InvoiceTable from '../components/InvoiceTable'
+import InvoiceTable from '../InvoiceTable'
 import toJson from 'enzyme-to-json'
 import { BrowserRouter as Router } from 'react-router-dom';
-
-export const tableMockData = [
-    {id: 'FAEXP/5/10/2018', issueDate: '10/10/2018', net: 5000},
-    {id: 'FAEXP/4/12/2018', issueDate: '12/12/2018', net: 6000},
-]
-
+import { tableMockData } from '../../../test-utils/testHelpers'
 
 test('InvoiceTable snapshot matches', () => {
     const table = enzyme.shallow(<InvoiceTable data={tableMockData} />);

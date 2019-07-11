@@ -1,7 +1,8 @@
 import React from 'react'
-import gql from "graphql-tag";
 import { Query } from "react-apollo";
-import Bubble from './Bubble'
+import Bubble from '../Bubble'
+import { Data, State, Props } from "./types"
+import { GET_CLIENTS_AND_TURNOVERS } from "../../gql_queries"
 
 const linearMappingOfBubblesR = (r: number): number => Math.sqrt(r)
 
@@ -14,17 +15,6 @@ const makeDataD3Ready = (data: { client: string, sumOfInvoices: number }) => {
         label: data.client
     };
 };
-
-interface Data {
-    turnoverByClients: Array<{ client: string, sumOfInvoices: number }>
-}
-
-type State = {
-    width: number
-    height: number
-}
-
-type Props = {}
 
 export default class BubbleContainer extends React.Component<Props,State> {
 
@@ -64,11 +54,3 @@ export default class BubbleContainer extends React.Component<Props,State> {
     }
 }
 
-export const GET_CLIENTS_AND_TURNOVERS = gql`
-    query turnoverByClients {
-        turnoverByClients {
-            client
-            sumOfInvoices
-        }
-    }
-`

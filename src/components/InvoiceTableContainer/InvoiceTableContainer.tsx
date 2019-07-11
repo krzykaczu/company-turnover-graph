@@ -1,15 +1,8 @@
 import React from "react";
 import { Query } from "react-apollo";
-import gql from "graphql-tag";
-import InvoiceTable from './InvoiceTable'
-
-type Props = {
-    client: string
-}
-
-interface Data {
-    invoicesByClient: Array<{ id: string; issueDate: string; net: number; }>;
-};
+import InvoiceTable from '../InvoiceTable'
+import { Props, Data } from "./types"
+import { GET_INVOICES_BY_CLIENT } from "../../gql_queries"
 
 export default ({ client }: Props) => (
     <Query<Data> query={GET_INVOICES_BY_CLIENT} variables={{ client }}>
@@ -23,13 +16,3 @@ export default ({ client }: Props) => (
         }}
     </Query>
 );
-
-export const GET_INVOICES_BY_CLIENT = gql`
-    query invoicesByClient($client: String!) {
-        invoicesByClient(client: $client) {
-            id
-            issueDate
-            net
-        }
-    }
-`;

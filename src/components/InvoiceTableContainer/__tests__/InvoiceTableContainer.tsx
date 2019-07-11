@@ -1,13 +1,14 @@
 import React from 'react'
 import * as enzyme from 'enzyme';
-import InvoiceTableContainer, { GET_INVOICES_BY_CLIENT } from '../components/InvoiceTableContainer'
+import InvoiceTableContainer from '../InvoiceTableContainer'
 import { MockedProvider } from 'react-apollo/test-utils';
 import toJson from 'enzyme-to-json'
-import MockComponent from '../test-utils/MockComponent';
+import MockComponent from '../../../test-utils/MockComponent';
 import wait from 'waait';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { GET_INVOICES_BY_CLIENT } from "../../../gql_queries"
 
-jest.mock('../components/InvoiceTable', () => require('../test-utils/MockComponent').default)
+jest.mock('../../InvoiceTable', () => require('../../../test-utils/MockComponent').default)
 
 const mocks = [
     {
@@ -52,6 +53,5 @@ test('InvoiceTableContainer acquires graphQl data without error', async () => {
         "issueDate": "22/01/2018",
         "net": 3472
     }]);
-
 
 })

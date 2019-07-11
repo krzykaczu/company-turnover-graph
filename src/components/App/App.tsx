@@ -1,22 +1,16 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, RouteComponentProps } from 'react-router-dom';
-import BubbleContainer from './components/BubbleContainer'
-import InvoiceTableContainer from './components/InvoiceTableContainer'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import BubbleContainer from '../BubbleContainer'
+import InvoiceTableContainer from '../InvoiceTableContainer'
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 import './App.css';
+import { Props } from "./types"
+import { endpoint } from '../../utils/endpoint'
 
 const client = new ApolloClient({
-    // uri: "http://localhost:4000"
-    uri: "https://company-turnover-server.herokuapp.com/"
+    uri: endpoint
 });
-
-interface MatchParams {
-    client: string;
-}
-
-interface Props extends RouteComponentProps<MatchParams> {
-}
 
 const App: React.FC = () => {
   return (

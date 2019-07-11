@@ -1,13 +1,14 @@
 import React from 'react'
 import * as enzyme from 'enzyme';
-import BubbleContainer, { GET_CLIENTS_AND_TURNOVERS } from '../components/BubbleContainer'
+import BubbleContainer from '../BubbleContainer'
 import { MockedProvider } from 'react-apollo/test-utils';
 import toJson from 'enzyme-to-json'
-import MockComponent from '../test-utils/MockComponent';
+import MockComponent from '../../../test-utils/MockComponent';
 import wait from 'waait';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { GET_CLIENTS_AND_TURNOVERS } from "../../../gql_queries"
 
-jest.mock('../components/Bubble', () => require('../test-utils/MockComponent').default)
+jest.mock('../../Bubble', () => require('../../../test-utils/MockComponent').default)
 
 const mocks = [
     {

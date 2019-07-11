@@ -3,19 +3,13 @@ Fully-featured demo available at [http://bit.ly/CompanyTurnoverApp](http://bit.l
 ## Installation
 Before running the app locally please uncomment `uri: "http://localhost:4000”`
 ```typescript
-// App.tsx
-const client = new ApolloClient({
-    uri: "http://localhost:4000"
-   // (…)
-});
+// src/utils/endpoint.tsx
+export const endpoint = "http://localhost:4000"
 ```
 and comment:
 ```typescript
- // App.tsx
-const client = new ApolloClient({
-    // (…)
-    // uri: "https://company-turnover-server.herokuapp.com/"
-});
+ // src/utils/endpoint.tsx
+// export const endpoint = "https://company-turnover-server.herokuapp.com/"
 ```
 
 ## Available Scripts
