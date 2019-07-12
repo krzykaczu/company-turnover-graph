@@ -2,29 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd3adebe-1c6b-4060-abde-f1d66c1f8298" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__tests__/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/__tests__/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__tests__/Bubble.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Bubble/__tests__/Bubble.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__tests__/BubbleContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BubbleContainer/__tests__/BubbleContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__tests__/InvoiceTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InvoiceTable/__tests__/InvoiceTable.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__tests__/InvoiceTableContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InvoiceTableContainer/__tests__/InvoiceTableContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__tests__/__snapshots__/App.tsx.snap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__tests__/__snapshots__/Bubble.tsx.snap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__tests__/__snapshots__/BubbleContainer.tsx.snap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__tests__/__snapshots__/InvoiceTable.tsx.snap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__tests__/__snapshots__/InvoiceTableContainer.tsx.snap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__tests__/formatInPLN.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/__tests__/formatInPLN.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Bubble.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Bubble/Bubble.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BubbleContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BubbleContainer/BubbleContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/InvoiceTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InvoiceTable/InvoiceTable.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/InvoiceTableContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InvoiceTableContainer/InvoiceTableContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/common_styles/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/types/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Bubble/types/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BubbleContainer/types/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/InvoiceTable/types/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/InvoiceTableContainer/types/index.tsx" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,21 +20,57 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/App/types.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="3" column="72" lean-forward="true" selection-start-line="3" selection-start-column="72" selection-end-line="3" selection-end-column="72" />
+            <state relative-caret-position="161">
+              <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/endpoint.tsx">
+        <entry file="file://$PROJECT_DIR$/src/components/Bubble/types.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/BubbleContainer/types.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/InvoiceTable/types.tsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="23">
-              <caret line="1" column="3" lean-forward="true" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="50" />
+              <caret line="1" column="25" lean-forward="true" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/InvoiceTableContainer/types.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="46">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -99,12 +119,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/ReadyTable.tsx" />
-        <option value="$PROJECT_DIR$/src/components/InvoiceTable.tsx" />
-        <option value="$PROJECT_DIR$/src/utils/formatInPLN.tsx" />
-        <option value="$PROJECT_DIR$/src/components/Bubble.tsx" />
-        <option value="$PROJECT_DIR$/src/__tests__/formatInPLN.tsx" />
-        <option value="$PROJECT_DIR$/test-setup.js" />
         <option value="$PROJECT_DIR$/src/test-setup.js" />
         <option value="$PROJECT_DIR$/src/setupTests.js" />
         <option value="$PROJECT_DIR$/jest.stubs.js" />
@@ -135,21 +149,27 @@
         <option value="$PROJECT_DIR$/src/components/InvoiceTable/index.tsx" />
         <option value="$PROJECT_DIR$/src/components/InvoiceTableContainer/index.tsx" />
         <option value="$PROJECT_DIR$/src/utils/endpoint.tsx" />
-        <option value="$PROJECT_DIR$/src/components/InvoiceTableContainer/types/index.tsx" />
         <option value="$PROJECT_DIR$/src/components/InvoiceTable/styles.tsx" />
         <option value="$PROJECT_DIR$/src/components/InvoiceTableContainer/__tests__/InvoiceTableContainer.tsx" />
         <option value="$PROJECT_DIR$/src/gql_queries/index.tsx" />
         <option value="$PROJECT_DIR$/src/components/BubbleContainer/__tests__/BubbleContainer.tsx" />
         <option value="$PROJECT_DIR$/src/components/Bubble/Bubble.tsx" />
-        <option value="$PROJECT_DIR$/src/components/Bubble/types/index.tsx" />
-        <option value="$PROJECT_DIR$/src/components/App/types/index.tsx" />
         <option value="$PROJECT_DIR$/src/components/App/App.tsx" />
-        <option value="$PROJECT_DIR$/src/components/BubbleContainer/types/index.tsx" />
         <option value="$PROJECT_DIR$/src/components/BubbleContainer/BubbleContainer.tsx" />
         <option value="$PROJECT_DIR$/src/components/InvoiceTable/InvoiceTable.tsx" />
-        <option value="$PROJECT_DIR$/src/components/InvoiceTable/types/index.tsx" />
         <option value="$PROJECT_DIR$/src/components/InvoiceTableContainer/InvoiceTableContainer.tsx" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/components/App/types/index.tsx" />
+        <option value="$PROJECT_DIR$/src/components/App/types.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Bubble/types/index.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Bubble/types.tsx" />
+        <option value="$PROJECT_DIR$/src/components/BubbleContainer/types/index.tsx" />
+        <option value="$PROJECT_DIR$/src/components/BubbleContainer/types.tsx" />
+        <option value="$PROJECT_DIR$/src/components/InvoiceTable/types/index.tsx" />
+        <option value="$PROJECT_DIR$/src/components/InvoiceTable/types.tsx" />
+        <option value="$PROJECT_DIR$/src/components/InvoiceTableContainer/types/index.tsx" />
+        <option value="$PROJECT_DIR$/src/components/InvoiceTableContainer/types.tsx" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -170,8 +190,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="37" />
-    <option name="y" value="87" />
+    <option name="x" value="40" />
+    <option name="y" value="169" />
     <option name="width" value="1284" />
     <option name="height" value="757" />
   </component>
@@ -181,6 +201,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -203,7 +224,15 @@
               <item name="client" type="b2602c69:ProjectViewProjectNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="InvoiceTable" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="InvoiceTableContainer" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="client" type="b2602c69:ProjectViewProjectNode" />
@@ -213,7 +242,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -269,22 +297,22 @@
       <workItem from="1560499637008" duration="3783000" />
       <workItem from="1562411852971" duration="2438000" />
       <workItem from="1562494453073" duration="480000" />
-      <workItem from="1562843544093" duration="6226000" />
+      <workItem from="1562843544093" duration="6370000" />
+      <workItem from="1562904666894" duration="344000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118266000" />
+    <option name="totallyTimeSpent" value="118754000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="37" y="87" width="1284" height="757" extended-state="0" />
+    <frame x="40" y="169" width="1284" height="757" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25019795" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Thumbnails" weight="0.16640987" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -299,6 +327,7 @@
       <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.2542373" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Quokka" order="13" />
+      <window_info anchor="bottom" id="Thumbnails" order="14" weight="0.16640987" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -334,37 +363,13 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/Table.tsx" />
-    <entry file="file://$PROJECT_DIR$/src/components/InvoiceListByClient.tsx" />
-    <entry file="file://$PROJECT_DIR$/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="13" column="45" lean-forward="true" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ClientSelector.tsx" />
-    <entry file="file://$PROJECT_DIR$/src/setupEnzyme.js" />
-    <entry file="file://$PROJECT_DIR$/jest.stubs.js" />
     <entry file="file://$PROJECT_DIR$/package-lock.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/.babelrc" />
-    <entry file="file://$PROJECT_DIR$/src/__tests__/__snapshots__/InvoiceTableContainer.tsx.snap">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2545" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/__tests__/__snapshots__/InvoiceTable.tsx.snap">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/__tests__/__snapshots__/Bubble.tsx.snap">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/__tests__/__snapshots__/InvoiceTableContainer.tsx.snap" />
+    <entry file="file://$PROJECT_DIR$/src/__tests__/__snapshots__/InvoiceTable.tsx.snap" />
+    <entry file="file://$PROJECT_DIR$/src/__tests__/__snapshots__/Bubble.tsx.snap" />
     <entry file="file://$PROJECT_DIR$/src/utils/formatInPLN.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
@@ -408,13 +413,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.test.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.test.tsx" />
     <entry file="file://$PROJECT_DIR$/src/components/App/App.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -436,9 +435,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
           <caret line="10" column="46" lean-forward="true" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -467,9 +463,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="5" column="63" lean-forward="true" selection-start-line="5" selection-start-column="63" selection-end-line="5" selection-end-column="63" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -491,9 +484,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
           <caret line="3" column="44" lean-forward="true" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -522,9 +512,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="8" column="61" selection-start-line="8" selection-start-column="61" selection-end-line="8" selection-end-column="61" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -532,13 +519,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
           <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/App/types/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="23" lean-forward="true" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -552,20 +532,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Bubble/types/index.tsx">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Bubble/Bubble.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
           <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/BubbleContainer/types/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -583,24 +553,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/InvoiceTable/types/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/InvoiceTable/InvoiceTable.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
           <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/InvoiceTableContainer/types/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="18" lean-forward="true" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -618,6 +574,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="72" lean-forward="true" selection-start-line="3" selection-start-column="72" selection-end-line="3" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/endpoint.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
@@ -625,10 +588,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
+    <entry file="file://$PROJECT_DIR$/src/components/App/types/index.tsx">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Bubble/types/index.tsx">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/BubbleContainer/types/index.tsx">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/InvoiceTable/types/index.tsx">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/InvoiceTableContainer/types/index.tsx">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/App/types.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="3" column="72" lean-forward="true" selection-start-line="3" selection-start-column="72" selection-end-line="3" selection-end-column="72" />
+        <state relative-caret-position="161">
+          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Bubble/types.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/BubbleContainer/types.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/InvoiceTable/types.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="25" lean-forward="true" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/InvoiceTableContainer/types.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
