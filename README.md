@@ -1,7 +1,8 @@
+# Unsplash.com Photo Grid App Client
 Fully-featured demo available at [http://bit.ly/CompanyTurnoverApp](http://bit.ly/CompanyTurnoverApp)
 
 ## Installation
-Before running the app locally please uncomment `uri: "http://localhost:4000”`
+Before running the app locally please uncomment `export const endpoint = "http://localhost:4000"`
 ```typescript
 // src/utils/endpoint.tsx
 export const endpoint = "http://localhost:4000"
