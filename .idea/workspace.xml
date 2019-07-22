@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd3adebe-1c6b-4060-abde-f1d66c1f8298" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/types/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Bubble/types/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BubbleContainer/types/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/InvoiceTable/types/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/InvoiceTableContainer/types/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/__tests__/formatInPLN.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/__tests__/formatInPLN.tsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/App/types.tsx">
           <provider selected="true" editor-type-id="text-editor">
@@ -52,7 +47,7 @@
         <entry file="file://$PROJECT_DIR$/src/components/InvoiceTable/types.tsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="23">
-              <caret line="1" column="25" lean-forward="true" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+              <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -66,11 +61,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="15" column="9" lean-forward="true" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/formatInPLN.tsx">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="46">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+              <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/utils/__tests__/formatInPLN.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="4" column="3" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -119,7 +132,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test-setup.js" />
         <option value="$PROJECT_DIR$/src/setupTests.js" />
         <option value="$PROJECT_DIR$/jest.stubs.js" />
         <option value="$PROJECT_DIR$/.babelrc" />
@@ -170,6 +182,7 @@
         <option value="$PROJECT_DIR$/src/components/InvoiceTableContainer/types/index.tsx" />
         <option value="$PROJECT_DIR$/src/components/InvoiceTableContainer/types.tsx" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/utils/__tests__/formatInPLN.tsx" />
       </list>
     </option>
   </component>
@@ -190,8 +203,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="40" />
-    <option name="y" value="169" />
+    <option name="x" value="53" />
+    <option name="y" value="284" />
     <option name="width" value="1284" />
     <option name="height" value="757" />
   </component>
@@ -201,7 +214,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -236,12 +248,34 @@
             </path>
             <path>
               <item name="client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="InvoiceTableContainer" type="462c0819:PsiDirectoryNode" />
+              <item name="__tests__" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="__tests__" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="client" type="b2602c69:ProjectViewProjectNode" />
               <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -298,15 +332,16 @@
       <workItem from="1562411852971" duration="2438000" />
       <workItem from="1562494453073" duration="480000" />
       <workItem from="1562843544093" duration="6370000" />
-      <workItem from="1562904666894" duration="344000" />
+      <workItem from="1562904666894" duration="412000" />
+      <workItem from="1563786356092" duration="188000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118754000" />
+    <option name="totallyTimeSpent" value="119010000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="40" y="169" width="1284" height="757" extended-state="0" />
+    <frame x="53" y="284" width="1284" height="757" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25019795" />
@@ -370,13 +405,6 @@
     <entry file="file://$PROJECT_DIR$/src/__tests__/__snapshots__/InvoiceTableContainer.tsx.snap" />
     <entry file="file://$PROJECT_DIR$/src/__tests__/__snapshots__/InvoiceTable.tsx.snap" />
     <entry file="file://$PROJECT_DIR$/src/__tests__/__snapshots__/Bubble.tsx.snap" />
-    <entry file="file://$PROJECT_DIR$/src/utils/formatInPLN.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/VSCodeProjects/__moje__/real-estate-3m-client/src/js/__tests__/panelUtils.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-408">
@@ -405,13 +433,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/_redirects">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/__tests__/formatInPLN.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.test.tsx" />
     <entry file="file://$PROJECT_DIR$/src/components/App/App.css">
@@ -526,9 +547,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
           <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -588,21 +606,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/App/types/index.tsx">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Bubble/types/index.tsx">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/BubbleContainer/types/index.tsx">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/InvoiceTable/types/index.tsx">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/InvoiceTableContainer/types/index.tsx">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/App/types/index.tsx" />
+    <entry file="file://$PROJECT_DIR$/src/components/Bubble/types/index.tsx" />
+    <entry file="file://$PROJECT_DIR$/src/components/BubbleContainer/types/index.tsx" />
+    <entry file="file://$PROJECT_DIR$/src/components/InvoiceTable/types/index.tsx" />
+    <entry file="file://$PROJECT_DIR$/src/components/InvoiceTableContainer/types/index.tsx" />
     <entry file="file://$PROJECT_DIR$/src/components/App/types.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -627,7 +635,7 @@
     <entry file="file://$PROJECT_DIR$/src/components/InvoiceTable/types.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
-          <caret line="1" column="25" lean-forward="true" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -640,8 +648,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="9" lean-forward="true" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/formatInPLN.tsx">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+          <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/__tests__/formatInPLN.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="3" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
         </state>
       </provider>
     </entry>
