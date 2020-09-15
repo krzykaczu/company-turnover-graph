@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`React Router snapshot matches 1`] = `ShallowWrapper {}`;
