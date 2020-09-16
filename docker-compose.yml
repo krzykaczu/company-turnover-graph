@@ -1,0 +1,25 @@
+---
+version: "3"
+
+services:
+    backend:
+        build:
+            context: .
+            dockerfile: docker/backend/Dockerfile
+        volumes:
+            - ./backend:/app
+        ports:
+            - "4000:4000"
+        command: npm run start
+
+    frontend:
+        build:
+            context: .
+            dockerfile: docker/frontend/Dockerfile
+        volumes:
+            - ./frontend:/app
+            - /app/node_modules/
+        ports:
+            - "3000:3000"
+        depends_on:
+            - backend
