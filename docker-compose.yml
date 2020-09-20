@@ -2,6 +2,13 @@
 version: "3"
 
 services:
+    csv-parser:
+        build:
+            context: .
+            dockerfile: docker/csv-parser/Dockerfile
+        ports:
+            - "5000:5000"
+
     backend:
         build:
             context: .
