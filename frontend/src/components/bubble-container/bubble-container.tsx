@@ -1,6 +1,7 @@
 import React from 'react';
 import { Query } from 'react-apollo';
-import Bubble from '../Bubble';
+
+import Bubble from '../bubble';
 import { Data, State, Props } from './types';
 import { GET_CLIENTS_AND_TURNOVERS } from '../../gql_queries';
 import Loader from '../loader';
@@ -45,13 +46,12 @@ export default class BubbleContainer extends React.Component<Props, State> {
                     if (error) return `Error! ${error.message}`;
 
                     return (
-                        /* data && (
+                        data && (
                             <Bubble
                                 data={data.turnoverByClients.map((client) => makeDataD3Ready(client))}
                                 size={[this.state.width, this.state.height]}
                             />
-                        ) */
-                        <Loader />
+                        )
                     );
                 }}
             </Query>

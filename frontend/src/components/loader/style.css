@@ -9,6 +9,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .dot-1 {
@@ -16,9 +19,6 @@
   z-index: 3;
   width: 30px;
   height: 30px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   background: #e56262;
   border-radius: 50%;
   animation-fill-mode: both;
@@ -30,9 +30,6 @@
   z-index: 2;
   width: 60px;
   height: 60px;
-  /* top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
   background: #e56262;
   border-radius: 50%;
   animation-fill-mode: both;
@@ -44,9 +41,6 @@
   z-index: 1;
   width: 90px;
   height: 90px;
-  /* top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
   background: #e56262;
   border-radius: 50%;
   animation-fill-mode: both;

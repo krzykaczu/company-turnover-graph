@@ -1,14 +1,15 @@
-import React from 'react'
+import React from 'react';
 import * as enzyme from 'enzyme';
-import BubbleContainer from '../BubbleContainer'
+import toJson from 'enzyme-to-json';
 import { MockedProvider } from 'react-apollo/test-utils';
-import toJson from 'enzyme-to-json'
-import MockComponent from '../../../test-utils/MockComponent';
-import wait from 'waait';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { GET_CLIENTS_AND_TURNOVERS } from "../../../gql_queries"
+import wait from 'waait';
 
-jest.mock('../../Bubble', () => require('../../../test-utils/MockComponent').default)
+import BubbleContainer from '../bubble-container';
+import MockComponent from '../../../test-utils/mock-component';
+import { GET_CLIENTS_AND_TURNOVERS } from '../../../gql_queries';
+
+jest.mock('../../bubble', () => require('../../../test-utils/mock-component').default);
 
 const mocks = [
     {
@@ -19,14 +20,14 @@ const mocks = [
             data: {
                 turnoverByClients: [
                     {
-                        "client": "BEETROOT SE",
-                        "sumOfInvoices": 14674
+                        client: 'BEETROOT SE',
+                        sumOfInvoices: 14674,
                     },
                     {
-                        "client": "GREEN",
-                        "sumOfInvoices": 8007
-                    }
-                ]
+                        client: 'GREEN',
+                        sumOfInvoices: 8007,
+                    },
+                ],
             },
         },
     },
@@ -38,30 +39,30 @@ test('BubbleContainer snapshot matches', () => {
 });
 
 test('BubbleContainer acquires graphQl data without error', async () => {
-    const graphQlWrapper = enzyme.mount((
+    const graphQlWrapper = enzyme.mount(
         <Router>
             <MockedProvider mocks={mocks} addTypename={false}>
                 <BubbleContainer />
             </MockedProvider>
-        </Router>)
-    )
+        </Router>,
+    );
 
     await wait(0);
 
     expect(graphQlWrapper.update().find(MockComponent).prop('data')).toMatchObject([
         {
-            "label": "BEETROOT SE",
-            "r": 121.13628688382354,
-            "value": 14674,
-            "x": 0,
-            "y": 0,
+            label: 'BEETROOT SE',
+            r: 121.13628688382354,
+            value: 14674,
+            x: 0,
+            y: 0,
         },
         {
-            "label": "GREEN",
-            "r": 89.48184173339304,
-            "value": 8007,
-            "x": 0,
-            "y": 0,
+            label: 'GREEN',
+            r: 89.48184173339304,
+            value: 8007,
+            x: 0,
+            y: 0,
         },
     ]);
-})
+});

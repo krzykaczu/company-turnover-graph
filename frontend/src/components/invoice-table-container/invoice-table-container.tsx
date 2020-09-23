@@ -1,6 +1,7 @@
 import React from 'react';
 import { Query } from 'react-apollo';
-import InvoiceTable from '../InvoiceTable';
+
+import InvoiceTable from '../invoice-table';
 import { Props, Data } from './types';
 import { GET_INVOICES_BY_CLIENT } from '../../gql_queries';
 import Loader from '../loader';
