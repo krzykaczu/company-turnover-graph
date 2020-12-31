@@ -1,5 +1,7 @@
 # Company Turnover Graph App
 
+![screencast](./assets/screencast.gif)
+
 ## Installation & Running
 `docker-compose up --build`
 
