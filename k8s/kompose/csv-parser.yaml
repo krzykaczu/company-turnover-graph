@@ -16,7 +16,7 @@ spec:
         io.kompose.service: csv-parser
     spec:
       containers:
-        - image: csv-parser
+        - image: localhost:5000/csv-parser
           name: csv-parser
           ports:
             - containerPort: 5000

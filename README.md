@@ -8,6 +8,28 @@
 
 ## K8s deployment
 
+```bash
+docker build . -t frontend -f ./docker/frontend/Dockerfile
+docker build . -t backend -f ./docker/backend/Dockerfile
+docker build . -t csv-parser -f ./docker/csv-parser/Dockerfile
+
+minikube start
+
+docker run -d -p 5000:5000 --restart=always --name registry registry:2
+
+docker tag frontend localhost:5000/frontend
+docker tag backend localhost:5000/backend
+docker tag csv-parser localhost:5000/csv-parser
+
+kubectl apply -f k8s/kompose/frontend.yaml,k8s/kompose/backend.yaml,k8s/kompose/csv-parser.yaml
+```
+
+to debug within cluster
+
+```bash
+kubectl describe pod <pod-id>
+```
+
 ## Issues solved for future reference
 
 - using d3 library
