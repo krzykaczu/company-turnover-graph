@@ -3,13 +3,18 @@
 ![screencast](./assets/screencast.gif)
 
 ## Installation & Running
+
 `docker-compose up --build`
 
+## K8s deployment
+
 ## Issues solved for future reference
+
 - using d3 library
 - data serving and consuming via graphql
 
 ## 2do
+
 - own graphql- and python-based BE
 - refactor `csv-parser` to OO-structure
 - env file based docker-compose
