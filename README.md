@@ -18,13 +18,13 @@ eval $(minikube docker-env)
 
 docker run -d -p 5000:5000 --restart=always --name registry registry:2
 
-docker tag frontend localhost:5000/frontend
-docker tag backend localhost:5000/backend
-docker tag csv-parser localhost:5000/csv-parser
+docker tag frontend localhost:49154/frontend
+docker tag backend localhost:49154/backend
+docker tag csv-parser localhost:49154/csv-parser
 
-docker push localhost:5000/frontend
-docker push localhost:5000/backend
-docker push localhost:5000/csv-parser
+docker push localhost:49154/frontend
+docker push localhost:49154/backend
+docker push localhost:49154/csv-parser
 
 kubectl apply -f k8s/kompose/frontend.yaml,k8s/kompose/backend.yaml,k8s/kompose/csv-parser.yaml
 ```
