@@ -1,25 +1,26 @@
 type Query {
-    invoices: [Invoice!]
-    invoicesByClient(client: String!): [Invoice]
-    clients: [String!]!
-    turnoverByClients: [TurnoverByClient!]!
-    turnoverByClient(client: String!): Float!
-    turnover: Float!
+  invoices: [Invoice!]
+  invoicesByClient(client: String!): [Invoice]
+  invoicesPerMonth(month: String!): [Invoice]
+  clients: [String!]!
+  turnoverByClients: [TurnoverByClient!]!
+  turnoverByClient(client: String!): Float!
+  turnover: Float!
 }
 
 # Types
 type Invoice {
-    id: ID!
-    status: String
-    issueDate: String!
-    warehouse: String!
-    client: String!
-    city: String!
-    net: Float!
-    gross: Float!
+  id: ID!
+  status: String
+  issueDate: String!
+  warehouse: String!
+  client: String!
+  city: String!
+  net: Float!
+  gross: Float!
 }
 
 type TurnoverByClient {
-    client: String!
-    sumOfInvoices: Float!
+  client: String!
+  sumOfInvoices: Float!
 }

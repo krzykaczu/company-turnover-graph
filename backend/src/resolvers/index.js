@@ -1,1 +1,5 @@
-export { default } from './Query'
+import Query from "./Query";
+
+export const resolvers = {
+  Query,
+};
