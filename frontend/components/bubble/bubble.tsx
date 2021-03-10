@@ -2,18 +2,25 @@ import React from "react";
 import * as d3 from "d3";
 
 import { formatInPLN } from "../../utils/helpers";
-import { Props, State } from "./types";
 
-export default class Bubble extends React.Component<Props, State> {
+interface Data {
+  r: number;
+  x: number;
+  y: number;
+  value: number;
+  label: string;
+}
+
+interface Props {
+  data: Array<Data>;
+  size: Array<number>;
+}
+
+export default class Bubble extends React.Component<Props> {
   private svgRef: React.RefObject<SVGSVGElement>;
 
   constructor(props: Props) {
     super(props);
-    this.state = {
-      width: this.props.size[0],
-      height: this.props.size[1],
-      data: this.props.data,
-    };
     this.svgRef = React.createRef();
     this.drawBubble = this.drawBubble.bind(this);
   }
@@ -49,13 +56,13 @@ export default class Bubble extends React.Component<Props, State> {
         .attr("class", "circles")
         .attr(
           "transform",
-          `translate(${this.state.width / 2},
-          ${this.state.height / 2})scale(0.17)`
+          `translate(${this.props.size[0] / 2},
+          ${this.props.size[1] / 2})scale(0.17)`
         );
 
       const node = circles
         .selectAll(".node")
-        .data(d3.packSiblings(this.state.data))
+        .data(d3.packSiblings(this.props.data))
         .enter()
         .append("a")
         .attr("xlink:href", function (d) {

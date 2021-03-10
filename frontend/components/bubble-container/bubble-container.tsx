@@ -28,14 +28,14 @@ const BubbleContainer = () => {
   if (loading) return <Loader />;
   if (error) return <div>{`Error! ${error.message}`}</div>;
 
-  return data ? (
+  return (
     <Bubble
-      data={data?.turnoverByClients.map((client: any) =>
+      data={(data?.turnoverByClients || []).map((client: any) =>
         makeDataD3Ready(client)
       )}
       size={[size.width, size.height]}
     />
-  ) : null;
+  );
 };
 
 export default BubbleContainer;
