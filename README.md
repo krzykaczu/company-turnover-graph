@@ -2,32 +2,40 @@
 
 ![screencast](./assets/screencast.gif)
 
-## Installation & Running
+## Local deployment via docker compose
 
 `docker-compose up --build`
 
 ## K8s deployment using local registry
 
 ```bash
+minikube start
+minikube addons enable registry
+
+docker run --rm -it --network=host alpine ash -c "apk add socat && socat TCP-LISTEN:5000,reuseaddr,fork TCP:$(minikube ip):5000"
+```
+
+in another terminal window:
+
+```
 docker build . -t frontend -f ./docker/frontend/Dockerfile
 docker build . -t backend -f ./docker/backend/Dockerfile
 docker build . -t csv-parser -f ./docker/csv-parser/Dockerfile
 
-minikube start --insecure-registry="localhost:5000"
-eval $(minikube docker-env)
+docker tag frontend localhost:5000/frontend
+docker tag backend localhost:5000/backend
+docker tag csv-parser localhost:5000/csv-parser
 
-docker run -d -p 5000:5000 --restart=always --name registry registry:2
-
-docker tag frontend localhost:49154/frontend
-docker tag backend localhost:49154/backend
-docker tag csv-parser localhost:49154/csv-parser
-
-docker push localhost:49154/frontend
-docker push localhost:49154/backend
-docker push localhost:49154/csv-parser
+docker push localhost:5000/frontend
+docker push localhost:5000/backend
+docker push localhost:5000/csv-parser
 
 kubectl apply -f k8s/kompose/frontend.yaml,k8s/kompose/backend.yaml,k8s/kompose/csv-parser.yaml
+
+kubectl get all
 ```
+
+and visit `http://localhost:3000`
 
 to debug within cluster
 
@@ -36,6 +44,7 @@ kubectl describe pod <pod-id>
 ```
 
 Useful links:
+https://minikube.sigs.k8s.io/docs/handbook/registry/
 https://stackoverflow.com/questions/52698748/connection-refused-on-pushing-a-docker-image
 
 cleanup
