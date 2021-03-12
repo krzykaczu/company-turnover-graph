@@ -8,6 +8,7 @@ services:
       dockerfile: docker/csv-parser/Dockerfile
     ports:
       - "5000:5000"
+    container_name: csv-parser
 
   backend:
     build:
@@ -17,6 +18,9 @@ services:
       - ./backend:/app
     ports:
       - "4000:4000"
+    environment:
+      - ENDPOINT=csv-parser
+    container_name: backend
 
   frontend:
     build:
@@ -26,6 +30,9 @@ services:
       - ./frontend:/app
     ports:
       - "3000:3000"
+    environment:
+      - ENDPOINT=backend
+    container_name: frontend
     depends_on:
       - backend
     stdin_open: true

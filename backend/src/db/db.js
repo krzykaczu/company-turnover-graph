@@ -7,7 +7,9 @@ export default class Db {
     this.endpoint = endpoint;
   }
 
-  static getData() {
-    return fetch(this.endpoint).then((res) => res.json());
+  static async getData() {
+    const fetchResult = await fetch(this.endpoint);
+    const dbData = await fetchResult.json();
+    return dbData;
   }
 }

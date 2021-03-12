@@ -1,2 +1,2 @@
 // export const endpoint = 'https://company-turnover-server.herokuapp.com/';
-export const endpoint = "http://backend:4000";
+export const endpoint = `http://${process.env.ENDPOINT || "0.0.0.0"}:4000`;
