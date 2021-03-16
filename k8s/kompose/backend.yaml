@@ -1,6 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (HEAD)
+  creationTimestamp: null
   labels:
     io.kompose.service: backend
   name: backend
@@ -13,11 +17,18 @@ spec:
     type: Recreate
   template:
     metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.22.0 (HEAD)
+      creationTimestamp: null
       labels:
         io.kompose.service: backend
     spec:
       containers:
-        - image: localhost:5000/backend
+        - env:
+            - name: ENDPOINT
+              value: csv-parser
+          image: localhost:5000/backend
           name: backend
           ports:
             - containerPort: 4000
@@ -28,6 +39,10 @@ status: {}
 apiVersion: v1
 kind: Service
 metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (HEAD)
+  creationTimestamp: null
   labels:
     io.kompose.service: backend
   name: backend

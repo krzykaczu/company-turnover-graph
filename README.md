@@ -33,9 +33,11 @@ docker push localhost:5000/csv-parser
 kubectl apply -f k8s/kompose/frontend.yaml,k8s/kompose/backend.yaml,k8s/kompose/csv-parser.yaml
 
 kubectl get all
+
+minikube service frontend
 ```
 
-and visit `http://localhost:3000`
+and that should open the browser with the app running
 
 to debug within cluster
 

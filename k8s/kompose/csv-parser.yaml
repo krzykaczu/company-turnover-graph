@@ -1,6 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (HEAD)
+  creationTimestamp: null
   labels:
     io.kompose.service: csv-parser
   name: csv-parser
@@ -12,6 +16,10 @@ spec:
   strategy: {}
   template:
     metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.22.0 (HEAD)
+      creationTimestamp: null
       labels:
         io.kompose.service: csv-parser
     spec:
@@ -27,6 +35,10 @@ status: {}
 apiVersion: v1
 kind: Service
 metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (HEAD)
+  creationTimestamp: null
   labels:
     io.kompose.service: csv-parser
   name: csv-parser
