@@ -5,16 +5,17 @@ import {
   GET_ALL_INVOICES,
 } from "../utils/gql-queries";
 import { initializeApollo } from "../lib/apolloClient";
+import { Card } from "../components/card";
 
 export default function Home() {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
+        <title>Company turnover</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <BubbleContainer />
+      <Card />
     </div>
   );
 }

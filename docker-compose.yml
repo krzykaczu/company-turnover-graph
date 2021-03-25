@@ -10,17 +10,17 @@ services:
       - "5000:5000"
     container_name: csv-parser
 
-  # backend:
-  #   build:
-  #     context: .
-  #     dockerfile: docker/backend/Dockerfile
-  #   volumes:
-  #     - ./backend:/app
-  #   ports:
-  #     - "4000:4000"
-  #   environment:
-  #     - ENDPOINT=csv-parser
-  #   container_name: backend
+  backend:
+    build:
+      context: .
+      dockerfile: docker/backend/Dockerfile
+    volumes:
+      - ./backend:/app
+    ports:
+      - "4000:4000"
+    environment:
+      - ENDPOINT=csv-parser
+    container_name: backend
 
   # frontend:
   #   build:
