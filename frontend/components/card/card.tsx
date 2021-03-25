@@ -1,10 +1,11 @@
 import { FunctionComponent } from "react";
-import styles from "./styles.module.scss";
+// @ts-ignore
+import { card } from "./card.module.scss";
 
 export const Card: FunctionComponent = () => {
   return (
     <div>
-      <p className={styles.card}>dupa</p>
+      <p className={card}>dupa</p>
     </div>
   );
 };

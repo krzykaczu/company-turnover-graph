@@ -1,0 +1,15 @@
+.layout {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.menu {
+  width: 200px;
+  height: 100%;
+}
+
+.dashboard {
+  flex: 1;
+  height: 100%;
+}

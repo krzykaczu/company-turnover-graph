@@ -5,7 +5,6 @@ import {
   GET_ALL_INVOICES,
 } from "../utils/gql-queries";
 import { initializeApollo } from "../lib/apolloClient";
-import { Card } from "../components/card";
 
 export default function Home() {
   return (
@@ -15,7 +14,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <BubbleContainer />
-      <Card />
     </div>
   );
 }
