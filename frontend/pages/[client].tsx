@@ -2,7 +2,7 @@ import { GetStaticProps, GetStaticPaths, GetServerSideProps } from "next";
 import InvoiceTableContainer from "../components/invoice-table-container";
 import { useRouter } from "next/router";
 
-function App() {
+function Client() {
   const router = useRouter();
   const { client } = router.query;
   return (
@@ -12,4 +12,4 @@ function App() {
   );
 }
 
-export default App;
+export default Client;

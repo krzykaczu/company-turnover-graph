@@ -10,29 +10,29 @@ services:
       - "5000:5000"
     container_name: csv-parser
 
-  backend:
-    build:
-      context: .
-      dockerfile: docker/backend/Dockerfile
-    volumes:
-      - ./backend:/app
-    ports:
-      - "4000:4000"
-    environment:
-      - ENDPOINT=csv-parser
-    container_name: backend
+  # backend:
+  #   build:
+  #     context: .
+  #     dockerfile: docker/backend/Dockerfile
+  #   volumes:
+  #     - ./backend:/app
+  #   ports:
+  #     - "4000:4000"
+  #   environment:
+  #     - ENDPOINT=csv-parser
+  #   container_name: backend
 
-  frontend:
-    build:
-      context: .
-      dockerfile: docker/frontend/Dockerfile
-    volumes:
-      - ./frontend:/app
-    ports:
-      - "3000:3000"
-    environment:
-      - ENDPOINT=backend
-    container_name: frontend
-    depends_on:
-      - backend
-    stdin_open: true
+  # frontend:
+  #   build:
+  #     context: .
+  #     dockerfile: docker/frontend/Dockerfile
+  #   volumes:
+  #     - ./frontend:/app
+  #   ports:
+  #     - "3000:3000"
+  #   environment:
+  #     - ENDPOINT=backend
+  #   container_name: frontend
+  #   depends_on:
+  #     - backend
+  #   stdin_open: true
