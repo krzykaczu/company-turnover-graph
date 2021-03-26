@@ -4,6 +4,7 @@ import { card } from "./card.module.scss";
 
 export const Card: FunctionComponent<{ className: string }> = ({
   className,
+  children,
 }) => {
-  return <p className={`${card} ${className}`}>dupa</p>;
+  return <div className={`${card} ${className}`}>{children}</div>;
 };

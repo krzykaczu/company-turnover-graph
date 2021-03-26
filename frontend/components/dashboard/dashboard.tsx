@@ -9,16 +9,22 @@ import {
   table, // @ts-ignore
 } from "./dashboard.module.scss";
 import { Card } from "../card";
+import { Stats } from "../stats";
+import InvoiceTableContainer from "../invoice-table-container";
 
 export const Dashboard: FunctionComponent = () => {
   return (
     <div className={layout}>
       <div className={menu}></div>
       <div className={dashboard}>
-        <Card className={stats} />
+        <Card className={stats}>
+          <Stats />
+        </Card>
         <Card className={progress} />
         <Card className={comp} />
-        <Card className={table} />
+        <Card className={table}>
+          <InvoiceTableContainer client="ASTER" />
+        </Card>
       </div>
     </div>
   );
