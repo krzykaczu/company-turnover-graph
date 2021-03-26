@@ -1,6 +1,13 @@
 import { FunctionComponent } from "react";
-// @ts-ignore
-import { layout, menu, dashboard } from "./dashboard.module.scss";
+import {
+  layout,
+  menu,
+  dashboard,
+  stats,
+  progress,
+  comp,
+  table, // @ts-ignore
+} from "./dashboard.module.scss";
 import { Card } from "../card";
 
 export const Dashboard: FunctionComponent = () => {
@@ -8,7 +15,10 @@ export const Dashboard: FunctionComponent = () => {
     <div className={layout}>
       <div className={menu}></div>
       <div className={dashboard}>
-        <Card />
+        <Card className={stats} />
+        <Card className={progress} />
+        <Card className={comp} />
+        <Card className={table} />
       </div>
     </div>
   );

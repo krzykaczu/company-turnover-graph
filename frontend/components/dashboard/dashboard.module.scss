@@ -5,11 +5,34 @@
 }
 
 .menu {
-  width: 200px;
+  width: 250px;
   height: 100%;
+  background-color: rgb(196, 196, 196);
 }
 
 .dashboard {
   flex: 1;
   height: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-areas:
+    "stats stats stats progress progress progress"
+    "comp comp comp progress progress progress"
+    "comp comp comp table table table"
+    "comp comp comp table table table";
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
+.stats {
+  grid-area: stats;
+}
+.progress {
+  grid-area: progress;
+}
+.comp {
+  grid-area: comp;
+}
+.table {
+  grid-area: table;
 }
