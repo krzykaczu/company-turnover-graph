@@ -28,7 +28,12 @@ const InvoiceTable = (props: Props) => {
   });
 
   return (
-    <Grid container direction="column" alignItems="center">
+    <Grid
+      className={classes.grid}
+      container
+      direction="column"
+      alignItems="center"
+    >
       <Grid item>
         {/* <Paper className={classes.paper}> */}
         <Table className={classes.table} padding="default">

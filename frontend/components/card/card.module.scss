@@ -7,5 +7,6 @@
   align-items: center;
   border-top: 3px solid rgb(12, 237, 196);
   margin: 0;
-  padding: 10px;
+  // max-height: calc(100vh / 2 - 40px);
+  overflow: auto;
 }

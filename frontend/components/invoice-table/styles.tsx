@@ -2,13 +2,10 @@ import { createStyles, Theme } from "@material-ui/core";
 
 export const styles = (theme: Theme) =>
   createStyles({
-    paper: {
-      /* marginTop: theme.spacing * 3, */
-      overflowX: "auto",
+    grid: {
+      maxHeight: "100%",
     },
-    /* table: {
-            minWidth: '80vw',
-        }, */
+    table: {},
     link: {
       textDecoration: "none",
       color: "rgba(0, 0, 0, 0.54)",
