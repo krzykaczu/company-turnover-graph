@@ -11,8 +11,8 @@ import {
 import { Card } from "../card";
 import { Stats } from "../stats";
 import InvoiceTableContainer from "../invoice-table-container";
-import { MyResponsiveBar, data } from "../progress";
-import { Comp } from "../comp";
+import { Progress, progressData } from "../progress";
+import { Comp, compData } from "../comp";
 
 export const Dashboard: FunctionComponent = () => {
   return (
@@ -23,10 +23,10 @@ export const Dashboard: FunctionComponent = () => {
           <Stats />
         </Card>
         <Card className={progress}>
-          <MyResponsiveBar data={data} />
+          <Progress data={progressData} />
         </Card>
         <Card className={comp}>
-          <Comp data={data} />
+          <Comp data={compData} />
         </Card>
         <Card className={table}>
           <InvoiceTableContainer client="ASTER" />
