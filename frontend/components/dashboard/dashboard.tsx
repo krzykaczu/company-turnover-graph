@@ -17,7 +17,7 @@ import { Comp, compData } from "../comp";
 export const Dashboard: FunctionComponent = () => {
   return (
     <div className={layout}>
-      <div className={menu}></div>
+      {/* <div className={menu}></div> */}
       <div className={dashboard}>
         <Card className={stats}>
           <Stats />

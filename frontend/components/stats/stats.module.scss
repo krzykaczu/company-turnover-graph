@@ -1,0 +1,31 @@
+.statItem {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  color: rgb(12, 237, 196);
+  margin: 0 20px;
+
+  /* &:not(:last-of-type):after {
+    content: "";
+    display: inline;
+    width: 3px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.06);
+  } */
+}
+
+.big {
+  font-size: 48px;
+}
+
+.heading {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.26);
+}
+
+.spacing {
+  display: inline;
+  width: 3px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.06);
+}
