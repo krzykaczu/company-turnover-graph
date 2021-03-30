@@ -1,14 +1,13 @@
+import { FunctionComponent } from "react";
 import { ResponsiveBar } from "@nivo/bar";
-// make sure parent container have a defined height when using
-// responsive component, otherwise height will be 0 and
-// no chart will be rendered.
-// website examples showcase many properties,
-// you'll often use just a few of them.
-export const Comp = ({ data /* see data tab */ }) => (
+
+export const Comp: FunctionComponent<{
+  data: { client: string; other?: number; compared?: number }[];
+}> = ({ data }) => (
   <ResponsiveBar
     data={data}
-    keys={["hot dog", "compared", "sandwich", "kebab", "fries", "other"]}
-    indexBy="country"
+    keys={["1", "compared", "3", "4", "5", "other"]}
+    indexBy="client"
     margin={{ top: 50, right: 50, bottom: 50, left: 100 }}
     padding={0.3}
     layout="horizontal"
@@ -33,20 +32,6 @@ export const Comp = ({ data /* see data tab */ }) => (
         rotation: -45,
         lineWidth: 6,
         spacing: 10,
-      },
-    ]}
-    fill={[
-      {
-        match: {
-          id: "fries",
-        },
-        id: "dots",
-      },
-      {
-        match: {
-          id: "sandwich",
-        },
-        id: "lines",
       },
     ]}
     borderColor={{ from: "color", modifiers: [["darker", 1.6]] }}
@@ -74,34 +59,3 @@ export const Comp = ({ data /* see data tab */ }) => (
     motionDamping={15}
   />
 );
-
-export const compData = [
-  {
-    country: "ASTER",
-    other: 113,
-  },
-  {
-    country: "BLUESTATION",
-    other: 184,
-  },
-  {
-    country: "BENGT",
-    compared: 156,
-  },
-  {
-    country: "ARCTICAL",
-    other: 70,
-  },
-  {
-    country: "MIND",
-    other: 42,
-  },
-  {
-    country: "TWOROOMS",
-    other: 41,
-  },
-  {
-    country: "WOJTEK",
-    other: 194,
-  },
-];
