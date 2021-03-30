@@ -2,7 +2,10 @@ import { FunctionComponent } from "react";
 import { ResponsiveBar } from "@nivo/bar";
 
 export const Comp: FunctionComponent<{
-  data: { client: string; other?: number; compared?: number }[];
+  data: (
+    | { client: string; other: number }
+    | { client: string; compared: number }
+  )[];
 }> = ({ data }) => (
   <ResponsiveBar
     data={data}

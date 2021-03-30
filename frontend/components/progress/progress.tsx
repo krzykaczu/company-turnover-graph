@@ -4,10 +4,10 @@ import { ResponsiveBar } from "@nivo/bar";
 // no chart will be rendered.
 // website examples showcase many properties,
 // you'll often use just a few of them.
-export const Progress = ({ data /* see data tab */ }) => (
+export const Progress = ({ data }) => (
   <ResponsiveBar
     data={data}
-    keys={["0", "1", "2", "3", "4", "invoice"]}
+    keys={["0", "1", "2", "3", "4", "sumOfInvoices"]}
     indexBy="month"
     margin={{ top: 50, right: 60, bottom: 50, left: 60 }}
     padding={0.3}
@@ -73,54 +73,3 @@ export const Progress = ({ data /* see data tab */ }) => (
     motionDamping={15}
   />
 );
-
-export const progressData = [
-  {
-    month: "jan",
-    invoice: 99,
-  },
-  {
-    month: "feb",
-    invoice: 0,
-  },
-  {
-    month: "mar",
-    invoice: 148,
-  },
-  {
-    month: "apr",
-    invoice: 194,
-  },
-  {
-    month: "may",
-    invoice: 0,
-  },
-  {
-    month: "jun",
-    invoice: 41,
-  },
-  {
-    month: "jul",
-    invoice: 54,
-  },
-  {
-    month: "aug",
-    invoice: 54,
-  },
-  {
-    month: "sep",
-    invoice: 0,
-  },
-  {
-    month: "oct",
-    invoice: 0,
-  },
-  {
-    month: "nov",
-    invoice: 54,
-  },
-  {
-    month: "dec",
-    invoice: 0,
-  },
-];

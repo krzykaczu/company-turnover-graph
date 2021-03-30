@@ -1,5 +1,6 @@
 import { GetStaticProps, GetStaticPaths, GetServerSideProps } from "next";
-import InvoiceTableContainer from "../components/invoice-table-container";
+// import InvoiceTableContainer from "../components/invoice-table-container";
+import { Dashboard } from "../components/dashboard";
 import { useRouter } from "next/router";
 
 function Client() {
@@ -7,7 +8,8 @@ function Client() {
   const { client } = router.query;
   return (
     <div className="App">
-      {client && <InvoiceTableContainer client={String(client)} />}
+      {/* {client && <InvoiceTableContainer client={String(client)} />} */}
+      {client && <Dashboard client={String(client)} />};
     </div>
   );
 }

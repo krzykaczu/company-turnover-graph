@@ -13,7 +13,7 @@ import {
 import { Card } from "../card";
 import { Stats } from "../stats";
 import InvoiceTableContainer from "../invoice-table-container";
-import { Progress, progressData } from "../progress";
+import { Progress } from "../progress";
 import { Comp } from "../comp";
 import {
   GET_INVOICES_BY_CLIENT,
@@ -29,35 +29,80 @@ export type Data1 = {
   turnoverByClients: TurnoverByClients;
 };
 
-const parseCompData = (clientName: string, data: Data1) => {
+const parseCompData = (
+  clientName: string,
+  data: Data1
+): (
+  | { client: string; other: number }
+  | { client: string; compared: number }
+)[] => {
   const sorted = [...data.turnoverByClients].sort(
     (a, b) => a.sumOfInvoices - b.sumOfInvoices
   );
   const refClient = sorted.find(({ client }) => client === clientName);
-  return (
-    refClient &&
-    sorted
-      .slice(sorted.indexOf(refClient) - 3, sorted.indexOf(refClient) + 4)
-      .map(({ client, sumOfInvoices }) =>
-        client === clientName
-          ? { client, compared: sumOfInvoices }
-          : { client, other: sumOfInvoices }
-      )
-  );
+  if (!refClient) {
+    return [];
+  }
+  return sorted
+    .slice(sorted.indexOf(refClient) - 3, sorted.indexOf(refClient) + 4)
+    .map(({ client, sumOfInvoices }) =>
+      client === clientName
+        ? { client, compared: sumOfInvoices }
+        : { client, other: sumOfInvoices }
+    );
+};
+
+const months = [
+  "jan",
+  "feb",
+  "mar",
+  "apr",
+  "may",
+  "jun",
+  "jul",
+  "aug",
+  "sep",
+  "oct",
+  "nov",
+  "dec",
+];
+
+const parseProgressData = (data: { invoicesByClient: Data }) => {
+  return data.invoicesByClient
+    .reduce(
+      (acc, cur) => {
+        const curMonth = months[Number(cur.issueDate.split("/")[0]) - 1];
+        const curMonthData =
+          acc[acc.findIndex(({ month }) => month === curMonth)];
+        return [
+          ...acc.filter(({ month }) => month !== curMonth),
+          {
+            index: curMonthData.index,
+            month: curMonth,
+            sumOfInvoices: curMonthData.sumOfInvoices + cur.net,
+          },
+        ];
+      },
+      months.map((month, index) => ({ month, index, sumOfInvoices: 0 }))
+    )
+    .sort((a, b) => a.index - b.index);
 };
 
 export const Dashboard: FunctionComponent<{ client: string }> = ({
   client,
 }) => {
-  const { loading, error, data } = useQuery<{ invoices: Data }>(
-    GET_ALL_INVOICES
-  );
+  const { loading, error, data: invoicesByClient } = useQuery<{
+    invoicesByClient: Data;
+  }>(GET_INVOICES_BY_CLIENT, {
+    variables: {
+      client,
+    },
+  });
   const {
-    loading: turnoveLoading,
-    error: turnoverError,
+    /* loading: turnoveLoading,
+    error: turnoverError, */
     data: turnoverData,
   } = useQuery<Data1>(GET_CLIENTS_AND_TURNOVERS);
-  // console.log();
   return (
     <div className={layout}>
       <div className={goBack}>
@@ -69,7 +114,9 @@ export const Dashboard: FunctionComponent<{ client: string }> = ({
           <Stats />
         </Card>
         <Card className={progress}>
-          <Progress data={progressData} />
+          <Progress
+            data={invoicesByClient ? parseProgressData(invoicesByClient) : []}
+          />
         </Card>
         <Card className={comp}>
           <Comp
