@@ -38,13 +38,13 @@ const InvoiceTable = (props: Props) => {
         {/* <Paper className={classes.paper}> */}
         <Table className={classes.table} padding="default">
           <TableHead>
-            <TableRow>
+            {/* <TableRow>
               <TableCell>
                 <Link href="/">⇦ Go Back</Link>
               </TableCell>
               <TableCell />
               <TableCell />
-            </TableRow>
+            </TableRow> */}
             <TableRow>
               <TableCell>Invoice number</TableCell>
               <TableCell align={"right"}>Date of issue</TableCell>

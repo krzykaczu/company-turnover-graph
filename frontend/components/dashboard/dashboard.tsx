@@ -1,4 +1,5 @@
 import { FunctionComponent } from "react";
+import Link from "next/link";
 import {
   layout,
   menu,
@@ -6,6 +7,7 @@ import {
   stats,
   progress,
   comp,
+  goBack,
   table, // @ts-ignore
 } from "./dashboard.module.scss";
 import { Card } from "../card";
@@ -17,6 +19,9 @@ import { Comp, compData } from "../comp";
 export const Dashboard: FunctionComponent = () => {
   return (
     <div className={layout}>
+      <div className={goBack}>
+        <Link href="/">⇦ Go Back</Link>
+      </div>
       {/* <div className={menu}></div> */}
       <div className={dashboard}>
         <Card className={stats}>

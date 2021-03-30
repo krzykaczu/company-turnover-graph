@@ -1,13 +1,22 @@
+$go-back-height: 20px;
+
 .layout {
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 38px);
   display: flex;
+  flex-direction: column;
 }
 
-.menu {
+/* .menu {
   width: 250px;
   height: 100%;
   background-color: rgb(196, 196, 196);
+} */
+
+.goBack {
+  height: $go-back-height;
+  margin-left: 20px;
+  margin-top: 20px;
 }
 
 .dashboard {

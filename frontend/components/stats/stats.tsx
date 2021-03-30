@@ -8,12 +8,12 @@ export const Stats: FunctionComponent = () => {
       <span className={`${statItem} ${big}`}>#1</span>
       <span className={spacing} />
       <span className={statItem}>
-        <div className={heading}>Monthly:</div>
+        <div className={heading}>Monthly</div>
         <div>12345</div>
       </span>
       <span className={spacing} />
       <span className={statItem}>
-        <div className={heading}>Total revenue:</div>
+        <div className={heading}>Annual revenue</div>
         <div>123456</div>
       </span>
     </>
