@@ -17,6 +17,7 @@ $go-back-height: 20px;
   height: $go-back-height;
   margin-left: 20px;
   margin-top: 20px;
+  align-self: self-start;
 }
 
 .dashboard {
@@ -46,4 +47,5 @@ $go-back-height: 20px;
 }
 .table {
   grid-area: table;
+  align-items: flex-start !important;
 }

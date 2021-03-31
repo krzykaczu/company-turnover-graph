@@ -9,7 +9,7 @@ function Client() {
   return (
     <div className="App">
       {/* {client && <InvoiceTableContainer client={String(client)} />} */}
-      {client && <Dashboard client={String(client)} />};
+      {client && <Dashboard client={String(client)} />}
     </div>
   );
 }

@@ -25,13 +25,13 @@ import { Props, Data } from "../invoice-table-container/types";
 
 type TurnoverByClients = Array<{ client: string; sumOfInvoices: number }>;
 
-export type Data1 = {
+export type TurnoverData = {
   turnoverByClients: TurnoverByClients;
 };
 
 const parseCompData = (
   clientName: string,
-  data: Data1
+  data: TurnoverData
 ): (
   | { client: string; other: number }
   | { client: string; compared: number }
@@ -88,6 +88,19 @@ const parseProgressData = (data: { invoicesByClient: Data }) => {
     .sort((a, b) => a.index - b.index);
 };
 
+const turnoverByClient = (clientName: string, data: TurnoverData) => {
+  return data.turnoverByClients.find(({ client }) => client === clientName)
+    ?.sumOfInvoices;
+};
+
+const getRank = (clientName: string, data: TurnoverData) => {
+  const sorted = [...data.turnoverByClients].sort(
+    (a, b) => b.sumOfInvoices - a.sumOfInvoices
+  );
+  const clientIndex = sorted.findIndex(({ client }) => client === clientName);
+  return clientIndex + 1;
+};
+
 export const Dashboard: FunctionComponent<{ client: string }> = ({
   client,
 }) => {
@@ -102,7 +115,7 @@ export const Dashboard: FunctionComponent<{ client: string }> = ({
     /* loading: turnoveLoading,
     error: turnoverError, */
     data: turnoverData,
-  } = useQuery<Data1>(GET_CLIENTS_AND_TURNOVERS);
+  } = useQuery<TurnoverData>(GET_CLIENTS_AND_TURNOVERS);
   return (
     <div className={layout}>
       <div className={goBack}>
@@ -111,7 +124,12 @@ export const Dashboard: FunctionComponent<{ client: string }> = ({
       {/* <div className={menu}></div> */}
       <div className={dashboard}>
         <Card className={stats}>
-          <Stats />
+          <Stats
+            turnover={
+              turnoverData ? turnoverByClient(client, turnoverData) : null
+            }
+            rank={turnoverData ? getRank(client, turnoverData) : null}
+          />
         </Card>
         <Card className={progress}>
           <Progress
