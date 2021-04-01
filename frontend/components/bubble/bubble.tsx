@@ -1,9 +1,9 @@
-import React from "react";
+import { Component, createRef } from "react";
 import * as d3 from "d3";
 
 import { formatInPLN } from "../../utils/helpers";
 
-interface Data {
+export interface BubbleData {
   r: number;
   x: number;
   y: number;
@@ -12,16 +12,16 @@ interface Data {
 }
 
 interface Props {
-  data: Array<Data>;
-  size: Array<number>;
+  data: BubbleData[];
+  size: number[];
 }
 
-export default class Bubble extends React.Component<Props> {
+export class Bubble extends Component<Props> {
   private svgRef: React.RefObject<SVGSVGElement>;
 
   constructor(props: Props) {
     super(props);
-    this.svgRef = React.createRef();
+    this.svgRef = createRef();
     this.drawBubble = this.drawBubble.bind(this);
   }
   componentDidMount() {

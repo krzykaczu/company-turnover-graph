@@ -1,3 +1,1 @@
-import Bubble from './bubble';
-
-export default Bubble;
+export * from "./bubble";

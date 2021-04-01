@@ -1,5 +1,7 @@
 import { FunctionComponent } from "react";
 import Link from "next/link";
+import { useQuery } from "@apollo/client";
+
 import {
   layout,
   menu,
@@ -20,92 +22,19 @@ import {
   GET_ALL_INVOICES,
   GET_CLIENTS_AND_TURNOVERS,
 } from "../../utils/gql-queries";
-import { useQuery } from "@apollo/client";
-import { Props, Data } from "../invoice-table-container/types";
-
-type TurnoverByClients = Array<{ client: string; sumOfInvoices: number }>;
-
-export type TurnoverData = {
-  turnoverByClients: TurnoverByClients;
-};
-
-const parseCompData = (
-  clientName: string,
-  data: TurnoverData
-): (
-  | { client: string; other: number }
-  | { client: string; compared: number }
-)[] => {
-  const sorted = [...data.turnoverByClients].sort(
-    (a, b) => a.sumOfInvoices - b.sumOfInvoices
-  );
-  const refClient = sorted.find(({ client }) => client === clientName);
-  if (!refClient) {
-    return [];
-  }
-  return sorted
-    .slice(sorted.indexOf(refClient) - 3, sorted.indexOf(refClient) + 4)
-    .map(({ client, sumOfInvoices }) =>
-      client === clientName
-        ? { client, compared: sumOfInvoices }
-        : { client, other: sumOfInvoices }
-    );
-};
-
-const months = [
-  "jan",
-  "feb",
-  "mar",
-  "apr",
-  "may",
-  "jun",
-  "jul",
-  "aug",
-  "sep",
-  "oct",
-  "nov",
-  "dec",
-];
-
-const parseProgressData = (data: { invoicesByClient: Data }) => {
-  return data.invoicesByClient
-    .reduce(
-      (acc, cur) => {
-        const curMonth = months[Number(cur.issueDate.split("/")[0]) - 1];
-        const curMonthData =
-          acc[acc.findIndex(({ month }) => month === curMonth)];
-        return [
-          ...acc.filter(({ month }) => month !== curMonth),
-          {
-            index: curMonthData.index,
-            month: curMonth,
-            sumOfInvoices: curMonthData.sumOfInvoices + cur.net,
-          },
-        ];
-      },
-      months.map((month, index) => ({ month, index, sumOfInvoices: 0 }))
-    )
-    .sort((a, b) => a.index - b.index);
-};
-
-const turnoverByClient = (clientName: string, data: TurnoverData) => {
-  return data.turnoverByClients.find(({ client }) => client === clientName)
-    ?.sumOfInvoices;
-};
-
-const getRank = (clientName: string, data: TurnoverData) => {
-  const sorted = [...data.turnoverByClients].sort(
-    (a, b) => b.sumOfInvoices - a.sumOfInvoices
-  );
-  const clientIndex = sorted.findIndex(({ client }) => client === clientName);
-  return clientIndex + 1;
-};
+import {
+  turnoverByClient,
+  getRank,
+  parseProgressData,
+  parseCompData,
+} from "./helpers";
+import type { TurnoverData, InvoicesData } from "../types";
 
 export const Dashboard: FunctionComponent<{ client: string }> = ({
   client,
 }) => {
   const { loading, error, data: invoicesByClient } = useQuery<{
-    invoicesByClient: Data;
+    invoicesByClient: InvoicesData;
   }>(GET_INVOICES_BY_CLIENT, {
     variables: {
       client,

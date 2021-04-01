@@ -1,16 +1,15 @@
-import Bubble from "../bubble";
+import { FunctionComponent } from "react";
+import { useQuery } from "@apollo/client";
+
+import { Bubble, BubbleData } from "../bubble";
 import { GET_CLIENTS_AND_TURNOVERS } from "../../utils/gql-queries";
 import Loader from "../loader";
-import { useQuery } from "@apollo/client";
 import { useWindowSize } from "../../utils/useWindowSize";
+import type { TurnoverByClient, TurnoverData } from "../types";
 
 const linearMappingOfBubblesR = (r: number): number => Math.sqrt(r);
 
-export type Data = {
-  turnoverByClients: Array<{ client: string; sumOfInvoices: number }>;
-};
-
-const makeDataD3Ready = (data: { client: string; sumOfInvoices: number }) => {
+const makeDataD3Ready = (data: TurnoverByClient): BubbleData => {
   return {
     r: linearMappingOfBubblesR(data.sumOfInvoices),
     x: 0,
@@ -20,8 +19,10 @@ const makeDataD3Ready = (data: { client: string; sumOfInvoices: number }) => {
   };
 };
 
-const BubbleContainer = () => {
-  const { loading, error, data } = useQuery<Data>(GET_CLIENTS_AND_TURNOVERS);
+export const BubbleContainer: FunctionComponent = () => {
+  const { loading, error, data } = useQuery<TurnoverData>(
+    GET_CLIENTS_AND_TURNOVERS
+  );
 
   const size = useWindowSize();
 
@@ -37,5 +38,3 @@ const BubbleContainer = () => {
     />
   );
 };
-
-export default BubbleContainer;

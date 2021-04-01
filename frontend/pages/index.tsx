@@ -1,5 +1,5 @@
 import Head from "next/head";
-import BubbleContainer from "../components/bubble-container";
+import { BubbleContainer } from "../components/bubble-container";
 import {
   GET_CLIENTS_AND_TURNOVERS,
   GET_ALL_INVOICES,

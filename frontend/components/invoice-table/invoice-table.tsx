@@ -1,6 +1,6 @@
+import { FunctionComponent } from "react";
 import {
   Grid,
-  Paper,
   Table,
   TableBody,
   TableCell,
@@ -8,22 +8,19 @@ import {
   TableRow,
   withStyles,
 } from "@material-ui/core";
-import Link from "next/link";
-import * as React from "react";
 
 import { formatInPLN } from "../../utils/helpers";
 import { Props } from "./types";
 import { styles } from "./styles";
 
-const InvoiceTable = (props: Props) => {
+const InvoiceTable: FunctionComponent<Props> = (props: Props) => {
   const { classes, data } = props;
-  const rows = data.map((inv, index) => {
-    const id = index + 1;
+  const rows = data.map(({ id, issueDate, net }, index) => {
     return {
-      id: id,
-      invoiceId: inv.id,
-      issueDate: inv.issueDate,
-      netAmount: inv.net,
+      id: index + 1,
+      invoiceId: id,
+      issueDate: issueDate,
+      netAmount: net,
     };
   });
 
@@ -35,16 +32,8 @@ const InvoiceTable = (props: Props) => {
       alignItems="center"
     >
       <Grid item>
-        {/* <Paper className={classes.paper}> */}
         <Table className={classes.table} padding="default">
           <TableHead>
-            {/* <TableRow>
-              <TableCell>
-                <Link href="/">⇦ Go Back</Link>
-              </TableCell>
-              <TableCell />
-              <TableCell />
-            </TableRow> */}
             <TableRow>
               <TableCell>Invoice number</TableCell>
               <TableCell align={"right"}>Date of issue</TableCell>
@@ -67,7 +56,6 @@ const InvoiceTable = (props: Props) => {
             })}
           </TableBody>
         </Table>
-        {/* </Paper> */}
       </Grid>
     </Grid>
   );

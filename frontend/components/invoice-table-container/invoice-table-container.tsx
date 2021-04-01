@@ -1,13 +1,13 @@
 import InvoiceTable from "../invoice-table";
-import { Props, Data } from "./types";
 import {
   GET_INVOICES_BY_CLIENT,
   GET_ALL_INVOICES,
 } from "../../utils/gql-queries";
 import Loader from "../loader";
 import { useQuery } from "@apollo/client";
+import type { InvoicesData } from "../types";
 
-const InvoiceTableContainer = ({ client }: Props) => {
+const InvoiceTableContainer = ({ client }: { client: string }) => {
   /**
    * Version 1 - dynamically fetched data
    */
@@ -25,7 +25,7 @@ const InvoiceTableContainer = ({ client }: Props) => {
   /**
    * Version 2 - data pre-fetched at SSG time
    */
-  const { loading, error, data } = useQuery<{ invoices: Data }>(
+  const { loading, error, data } = useQuery<{ invoices: InvoicesData }>(
     GET_ALL_INVOICES
   );
   if (loading) return <Loader />;
