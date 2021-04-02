@@ -6,5 +6,9 @@ export const Card: FunctionComponent<{ className: string }> = ({
   className,
   children,
 }) => {
-  return <div className={`${card} ${className}`}>{children}</div>;
+  return (
+    <div style={{ width: "300px", height: "300px" }}>
+      <div className={`${card} ${className}`}>{children}</div>
+    </div>
+  );
 };

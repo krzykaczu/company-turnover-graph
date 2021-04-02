@@ -3,10 +3,12 @@ import type { FunctionComponent } from "react";
 import { statItem, big, heading, spacing } from "./stats.module.scss";
 import { formatInPLN } from "../../utils/helpers";
 
-export const Stats: FunctionComponent<{
+export interface StatsProps {
   turnover: number | null | undefined;
   rank: number | null | undefined;
-}> = ({ turnover, rank }) => {
+}
+
+export const Stats: FunctionComponent<StatsProps> = ({ turnover, rank }) => {
   return (
     <>
       <span className={`${statItem} ${big}`}>#{rank}</span>
