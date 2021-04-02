@@ -1,10 +1,16 @@
+import type { FunctionComponent } from "react";
 import { ResponsiveBar } from "@nivo/bar";
-// make sure parent container have a defined height when using
-// responsive component, otherwise height will be 0 and
-// no chart will be rendered.
-// website examples showcase many properties,
-// you'll often use just a few of them.
-export const Progress = ({ data }) => (
+import { MONTHS } from "../dashboard/helpers";
+
+export interface ProgressData {
+  index: number;
+  month: typeof MONTHS[number];
+  sumOfInvoices: number;
+}
+
+export const Progress: FunctionComponent<{ data: ProgressData[] }> = ({
+  data,
+}) => (
   <ResponsiveBar
     data={data}
     keys={["0", "1", "2", "3", "4", "sumOfInvoices"]}
@@ -32,20 +38,6 @@ export const Progress = ({ data }) => (
         rotation: -45,
         lineWidth: 6,
         spacing: 10,
-      },
-    ]}
-    fill={[
-      {
-        match: {
-          id: "fries",
-        },
-        id: "dots",
-      },
-      {
-        match: {
-          id: "sandwich",
-        },
-        id: "lines",
       },
     ]}
     borderColor={{ from: "color", modifiers: [["darker", 1.6]] }}

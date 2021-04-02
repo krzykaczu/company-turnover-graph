@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react";
+import type { FunctionComponent } from "react";
 // @ts-ignore
 import { statItem, big, heading, spacing } from "./stats.module.scss";
 import { formatInPLN } from "../../utils/helpers";

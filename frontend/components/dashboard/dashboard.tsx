@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react";
+import type { FunctionComponent } from "react";
 import Link from "next/link";
 import { useQuery } from "@apollo/client";
 

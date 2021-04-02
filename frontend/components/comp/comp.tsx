@@ -1,11 +1,13 @@
-import { FunctionComponent } from "react";
+import type { FunctionComponent } from "react";
 import { ResponsiveBar } from "@nivo/bar";
 
+export type CompData = (
+  | { client: string; other: number }
+  | { client: string; compared: number }
+)[];
+
 export const Comp: FunctionComponent<{
-  data: (
-    | { client: string; other: number }
-    | { client: string; compared: number }
-  )[];
+  data: CompData;
 }> = ({ data }) => (
   <ResponsiveBar
     data={data}

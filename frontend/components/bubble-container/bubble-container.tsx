@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react";
+import type { FunctionComponent } from "react";
 import { useQuery } from "@apollo/client";
 
 import { Bubble, BubbleData } from "../bubble";
@@ -9,13 +9,16 @@ import type { TurnoverByClient, TurnoverData } from "../types";
 
 const linearMappingOfBubblesR = (r: number): number => Math.sqrt(r);
 
-const makeDataD3Ready = (data: TurnoverByClient): BubbleData => {
+const makeDataD3Ready = ({
+  sumOfInvoices,
+  client,
+}: TurnoverByClient): BubbleData => {
   return {
-    r: linearMappingOfBubblesR(data.sumOfInvoices),
+    r: linearMappingOfBubblesR(sumOfInvoices),
     x: 0,
     y: 0,
-    value: data.sumOfInvoices,
-    label: data.client,
+    value: sumOfInvoices,
+    label: client,
   };
 };
 
@@ -31,7 +34,7 @@ export const BubbleContainer: FunctionComponent = () => {
 
   return (
     <Bubble
-      data={(data?.turnoverByClients || []).map((client: any) =>
+      data={(data?.turnoverByClients || []).map((client: TurnoverByClient) =>
         makeDataD3Ready(client)
       )}
       size={[size.width, size.height]}

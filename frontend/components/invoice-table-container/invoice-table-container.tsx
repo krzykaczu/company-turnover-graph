@@ -1,3 +1,4 @@
+import type { FunctionComponent } from "react";
 import InvoiceTable from "../invoice-table";
 import {
   GET_INVOICES_BY_CLIENT,
@@ -7,7 +8,9 @@ import Loader from "../loader";
 import { useQuery } from "@apollo/client";
 import type { InvoicesData } from "../types";
 
-const InvoiceTableContainer = ({ client }: { client: string }) => {
+const InvoiceTableContainer: FunctionComponent<{
+  client: string;
+}> = ({ client }) => {
   /**
    * Version 1 - dynamically fetched data
    */

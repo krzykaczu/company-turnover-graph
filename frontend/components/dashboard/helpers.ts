@@ -1,6 +1,8 @@
 import type { TurnoverData, InvoicesData } from "../types";
+import type { CompData } from "../comp";
+import type { ProgressData } from "../progress";
 
-const MONTHS = [
+export const MONTHS = [
   "jan",
   "feb",
   "mar",
@@ -18,10 +20,7 @@ const MONTHS = [
 export const parseCompData = (
   clientName: string,
   data: TurnoverData
-): (
-  | { client: string; other: number }
-  | { client: string; compared: number }
-)[] => {
+): CompData => {
   const sortedDesc = [...data.turnoverByClients].sort(
     (a, b) => a.sumOfInvoices - b.sumOfInvoices
   );
@@ -38,7 +37,9 @@ export const parseCompData = (
     );
 };
 
-export const parseProgressData = (data: { invoicesByClient: InvoicesData }) => {
+export const parseProgressData = (data: {
+  invoicesByClient: InvoicesData;
+}): ProgressData[] => {
   return data.invoicesByClient
     .reduce(
       (acc, cur) => {
@@ -59,12 +60,15 @@ export const parseProgressData = (data: { invoicesByClient: InvoicesData }) => {
     .sort((a, b) => a.index - b.index);
 };
 
-export const turnoverByClient = (clientName: string, data: TurnoverData) => {
+export const turnoverByClient = (
+  clientName: string,
+  data: TurnoverData
+): number | undefined => {
   return data.turnoverByClients.find(({ client }) => client === clientName)
     ?.sumOfInvoices;
 };
 
-export const getRank = (clientName: string, data: TurnoverData) => {
+export const getRank = (clientName: string, data: TurnoverData): number => {
   const sorted = [...data.turnoverByClients].sort(
     (a, b) => b.sumOfInvoices - a.sumOfInvoices
   );
