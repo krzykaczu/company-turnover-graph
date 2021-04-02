@@ -3,13 +3,16 @@ import { Comp, CompData } from "./comp";
 export default {
   component: Comp,
   title: "Comp",
+  decorators: [
+    (Story) => (
+      <div style={{ width: "300px", height: "300px" }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
-const Template = (args: { data: CompData }) => (
-  <div style={{ width: "300px", height: "300px" }}>
-    <Comp {...args} />
-  </div>
-);
+const Template = (args: { data: CompData }) => <Comp {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

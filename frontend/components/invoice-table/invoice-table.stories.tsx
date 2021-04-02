@@ -4,13 +4,16 @@ import type { InvoicesData } from "../types";
 export default {
   component: InvoiceTable,
   title: "InvoiceTable",
+  decorators: [
+    (Story) => (
+      <div style={{ width: "300px", height: "300px" }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
-const Template = (args: { data: InvoicesData }) => (
-  <div style={{ width: "300px", height: "300px" }}>
-    <InvoiceTable {...args} />
-  </div>
-);
+const Template = (args: { data: InvoicesData }) => <InvoiceTable {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
