@@ -32,7 +32,7 @@ $go-back-height: 20px;
     "comp comp comp table table table";
   column-gap: 20px;
   row-gap: 20px;
-  grid-template-columns: repeat(6, minmax(1fr, 350px));
+  grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(4, 1fr);
 }
 
