@@ -5,15 +5,22 @@ import {
   GET_ALL_INVOICES,
 } from "../utils/gql-queries";
 import { initializeApollo } from "../lib/apolloClient";
+import { CompAll } from "../components/comp-all";
+import { useWindowSize } from "../utils/useWindowSize";
 
 export default function Home() {
+  const size = useWindowSize();
+
   return (
     <div>
       <Head>
         <title>Company turnover</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <BubbleContainer />
+      <div style={{ display: "flex", width: "100%" }}>
+        <CompAll size={size} />
+        <BubbleContainer size={size} />
+      </div>
     </div>
   );
 }

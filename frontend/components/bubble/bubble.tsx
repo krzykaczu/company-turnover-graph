@@ -38,7 +38,7 @@ export class Bubble extends Component<Props> {
 
       svg.style("transform-origin", "50% 50% 0");
 
-      const zoom: any = d3
+      /* const zoom: any = d3
         .zoom()
         .scaleExtent([1, 30])
         .on("zoom", function (event) {
@@ -46,12 +46,12 @@ export class Bubble extends Component<Props> {
             "transform",
             event.transform + `scale(${event.transform.k})`
           );
-        });
+        }); */
 
       const color = d3.scaleOrdinal(d3.schemeCategory10);
 
       const circles = svg
-        .call(zoom)
+        /* .call(zoom) */
         .append("g")
         .attr("class", "circles")
         .attr(

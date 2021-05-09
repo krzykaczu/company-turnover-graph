@@ -4,7 +4,7 @@ import { useQuery } from "@apollo/client";
 import { Bubble, BubbleData } from "../bubble";
 import { GET_CLIENTS_AND_TURNOVERS } from "../../utils/gql-queries";
 import Loader from "../loader";
-import { useWindowSize } from "../../utils/useWindowSize";
+import type { WindowSize } from "../../utils/useWindowSize";
 import type { TurnoverByClient, TurnoverData } from "../types";
 
 const linearMappingOfBubblesR = (r: number): number => Math.sqrt(r);
@@ -22,12 +22,12 @@ const makeDataD3Ready = ({
   };
 };
 
-export const BubbleContainer: FunctionComponent = () => {
+export const BubbleContainer: FunctionComponent<{ size: WindowSize }> = ({
+  size: { width, height },
+}) => {
   const { loading, error, data } = useQuery<TurnoverData>(
     GET_CLIENTS_AND_TURNOVERS
   );
-
-  const size = useWindowSize();
 
   if (loading) return <Loader />;
   if (error) return <div>{`Error! ${error.message}`}</div>;
@@ -37,7 +37,7 @@ export const BubbleContainer: FunctionComponent = () => {
       data={(data?.turnoverByClients || []).map((client: TurnoverByClient) =>
         makeDataD3Ready(client)
       )}
-      size={[size.width, size.height]}
+      size={[width / 2, height]}
     />
   );
 };

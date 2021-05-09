@@ -37,6 +37,16 @@ export const parseCompData = (
     );
 };
 
+export const parseCompAllData = (data: TurnoverData): CompData => {
+  const sortedDesc = [...data.turnoverByClients].sort(
+    (a, b) => a.sumOfInvoices - b.sumOfInvoices
+  );
+  return sortedDesc.map(({ client, sumOfInvoices }) => ({
+    client,
+    other: sumOfInvoices,
+  }));
+};
+
 export const parseProgressData = (data: {
   invoicesByClient: InvoicesData;
 }): ProgressData[] => {
