@@ -17,6 +17,7 @@ export const CompAll: FunctionComponent<{ size: WindowSize }> = ({
         error: turnoverError, */
     data: turnoverData,
   } = useQuery<TurnoverData>(GET_CLIENTS_AND_TURNOVERS);
+
   return (
     <div style={{ width: `${width / 2}px`, height: `${height}px` }}>
       <Comp data={turnoverData ? parseCompAllData(turnoverData) : []} />
