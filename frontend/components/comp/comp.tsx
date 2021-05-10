@@ -12,9 +12,8 @@ export type CompData = (
 
 export const Comp: FunctionComponent<{
   data: CompData;
-  hoveredCustomer?: string;
   setHoveredCustomer?: Dispatch<SetStateAction<string>>;
-}> = ({ data, hoveredCustomer, setHoveredCustomer = () => "" }) => {
+}> = ({ data, setHoveredCustomer = () => "" }) => {
   const router = useRouter();
   return (
     <div className={comp}>
@@ -65,10 +64,11 @@ export const Comp: FunctionComponent<{
           legendPosition: "middle",
           legendOffset: -40,
         }}
+        isInteractive={false}
         labelSkipWidth={12}
         labelSkipHeight={12}
         labelTextColor={{ from: "color", modifiers: [["darker", 1.6]] }}
-        animate={true}
+        animate={false}
         motionStiffness={90}
         motionDamping={15}
         onClick={(data) => {

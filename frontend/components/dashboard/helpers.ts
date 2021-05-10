@@ -37,14 +37,18 @@ export const parseCompData = (
     );
 };
 
-export const parseCompAllData = (data: TurnoverData): CompData => {
+export const parseCompAllData = (
+  data: TurnoverData,
+  hoveredCustomer: string
+): CompData => {
   const sortedDesc = [...data.turnoverByClients].sort(
     (a, b) => a.sumOfInvoices - b.sumOfInvoices
   );
-  return sortedDesc.map(({ client, sumOfInvoices }) => ({
-    client,
-    other: sumOfInvoices,
-  }));
+  return sortedDesc.map(({ client, sumOfInvoices }) =>
+    client === hoveredCustomer
+      ? { client, compared: sumOfInvoices }
+      : { client, other: sumOfInvoices }
+  );
 };
 
 export const parseProgressData = (data: {

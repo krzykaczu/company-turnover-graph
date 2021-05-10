@@ -62,10 +62,5 @@ kubectl delete --all pods,services,deployments,replicasets
 
 ## 2do
 
-- own graphql- and python-based BE
-- refactor `csv-parser` to OO-structure
-- env file based docker-compose
-- improve frontend UX: hints to user how to zoom, change cursor
-- animate d3 graphs
-- refactor frontend to achieve more modular structure
+- eslint
 - update frontend unit and integration tests

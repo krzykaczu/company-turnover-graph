@@ -21,7 +21,6 @@ export const CustomerSelection: FunctionComponent = () => {
   if (error) return <div>{`Error! ${error.message}`}</div>;
   return (
     <div className={customerSelection}>
-      {console.log(hoveredCustomer)}
       <CompAll
         size={size}
         data={data}

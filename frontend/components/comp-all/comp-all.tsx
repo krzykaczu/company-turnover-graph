@@ -18,8 +18,7 @@ export const CompAll: FunctionComponent<{
   return (
     <div style={{ width: `${width / 2}px`, height: `${height}px` }}>
       <Comp
-        data={data ? parseCompAllData(data) : []}
-        hoveredCustomer={hoveredCustomer}
+        data={data ? parseCompAllData(data, hoveredCustomer) : []}
         setHoveredCustomer={setHoveredCustomer}
       />
     </div>

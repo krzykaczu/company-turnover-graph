@@ -35,23 +35,11 @@ export class Bubble extends Component<Props> {
   drawBubble = () => {
     if (this.svgRef.current) {
       const svg = d3.select(this.svgRef.current);
-      const { setHoveredCustomer } = this.props;
+      const { setHoveredCustomer, hoveredCustomer } = this.props;
 
       svg.select("g").remove();
 
       svg.style("transform-origin", "50% 50% 0");
-
-      /* const zoom: any = d3
-        .zoom()
-        .scaleExtent([1, 30])
-        .on("zoom", function (event) {
-          svg.attr(
-            "transform",
-            event.transform + `scale(${event.transform.k})`
-          );
-        }); */
-
-      // const color = d3.scaleOrdinal(d3.schemeCategory10);
 
       const circles = svg
         /* .call(zoom) */
@@ -75,23 +63,23 @@ export class Bubble extends Component<Props> {
         .attr("class", "node")
         .attr("transform", function (d) {
           return "translate(" + d.x + "," + d.y + ")";
-        });
-
-      node.append("title").text(function (d) {
-        return d.label + ": " + formatInPLN(d.value);
-      });
-
-      node
-        .append("circle")
-        .attr("r", function (d) {
-          return d.r;
         })
-        .style("fill", "#97e3d5")
-        .on("mouseover", function (d) {
+        .style("fill", function (d) {
+          return d.label === hoveredCustomer ? "#f47560" : "#97e3d5";
+        })
+        .on("mouseenter", function (d) {
           d3.select(this).style("fill", "#f47560");
-          /* console.log(this);
-          setHoveredCustomer(d.label); */
+          const text = this.querySelector("text");
+          setHoveredCustomer(text ? String(text.textContent) : "");
+        })
+        .on("mouseleave", function (d) {
+          d3.select(this).style("fill", "#97e3d5");
+          setHoveredCustomer("");
         });
+
+      node.append("circle").attr("r", function (d) {
+        return d.r;
+      });
 
       node
         .append("text")
