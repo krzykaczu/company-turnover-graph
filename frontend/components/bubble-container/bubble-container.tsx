@@ -1,9 +1,5 @@
 import type { FunctionComponent } from "react";
-import { useQuery } from "@apollo/client";
-
 import { Bubble, BubbleData } from "../bubble";
-import { GET_CLIENTS_AND_TURNOVERS } from "../../utils/gql-queries";
-import Loader from "../loader";
 import type { WindowSize } from "../../utils/useWindowSize";
 import type { TurnoverByClient, TurnoverData } from "../types";
 
@@ -22,16 +18,10 @@ const makeDataD3Ready = ({
   };
 };
 
-export const BubbleContainer: FunctionComponent<{ size: WindowSize }> = ({
-  size: { width, height },
-}) => {
-  const { loading, error, data } = useQuery<TurnoverData>(
-    GET_CLIENTS_AND_TURNOVERS
-  );
-
-  if (loading) return <Loader />;
-  if (error) return <div>{`Error! ${error.message}`}</div>;
-
+export const BubbleContainer: FunctionComponent<{
+  size: WindowSize;
+  data: TurnoverData | undefined;
+}> = ({ size: { width, height } }, data) => {
   return (
     <Bubble
       data={(data?.turnoverByClients || []).map((client: TurnoverByClient) =>
