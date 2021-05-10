@@ -1,4 +1,4 @@
-import type { FunctionComponent } from "react";
+import { FunctionComponent, useState } from "react";
 import { BubbleContainer } from "../bubble-container";
 import { CompAll } from "../comp-all";
 import { useWindowSize } from "../../utils/useWindowSize";
@@ -12,6 +12,7 @@ import type { TurnoverData } from "../types";
 
 export const CustomerSelection: FunctionComponent = () => {
   const size = useWindowSize();
+  const [hoveredCustomer, setHoveredCustomer] = useState<string>("");
   const { loading, error, data } = useQuery<TurnoverData>(
     GET_CLIENTS_AND_TURNOVERS
   );
@@ -20,8 +21,19 @@ export const CustomerSelection: FunctionComponent = () => {
   if (error) return <div>{`Error! ${error.message}`}</div>;
   return (
     <div className={customerSelection}>
-      <CompAll size={size} data={data} />
-      <BubbleContainer size={size} data={data} />
+      {console.log(hoveredCustomer)}
+      <CompAll
+        size={size}
+        data={data}
+        hoveredCustomer={hoveredCustomer}
+        setHoveredCustomer={setHoveredCustomer}
+      />
+      <BubbleContainer
+        size={size}
+        data={data}
+        hoveredCustomer={hoveredCustomer}
+        setHoveredCustomer={setHoveredCustomer}
+      />
     </div>
   );
 };

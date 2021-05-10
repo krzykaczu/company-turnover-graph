@@ -1,4 +1,4 @@
-import { Component, createRef } from "react";
+import { Component, createRef, Dispatch, SetStateAction } from "react";
 import * as d3 from "d3";
 
 import { formatInPLN } from "../../utils/helpers";
@@ -14,6 +14,8 @@ export interface BubbleData {
 interface Props {
   data: BubbleData[];
   size: number[];
+  hoveredCustomer: string;
+  setHoveredCustomer: Dispatch<SetStateAction<string>>;
 }
 
 export class Bubble extends Component<Props> {
@@ -33,6 +35,7 @@ export class Bubble extends Component<Props> {
   drawBubble = () => {
     if (this.svgRef.current) {
       const svg = d3.select(this.svgRef.current);
+      const { setHoveredCustomer } = this.props;
 
       svg.select("g").remove();
 
@@ -48,7 +51,7 @@ export class Bubble extends Component<Props> {
           );
         }); */
 
-      const color = d3.scaleOrdinal(d3.schemeCategory10);
+      // const color = d3.scaleOrdinal(d3.schemeCategory10);
 
       const circles = svg
         /* .call(zoom) */
@@ -57,7 +60,7 @@ export class Bubble extends Component<Props> {
         .attr(
           "transform",
           `translate(${this.props.size[0] / 2},
-          ${this.props.size[1] / 2})scale(0.17)`
+          ${this.props.size[1] / 2})scale(0.23)`
         );
 
       const node = circles
@@ -83,15 +86,18 @@ export class Bubble extends Component<Props> {
         .attr("r", function (d) {
           return d.r;
         })
-        .style("fill", function (d, i) {
-          return color(String(i));
+        .style("fill", "#97e3d5")
+        .on("mouseover", function (d) {
+          d3.select(this).style("fill", "#f47560");
+          /* console.log(this);
+          setHoveredCustomer(d.label); */
         });
 
       node
         .append("text")
         .attr("dy", ".2em")
         .style("text-anchor", "middle")
-        .text(function (d) {
+        .text(function (d, i) {
           return d.label.substring(0, d.r / 3);
         })
         .attr("font-family", "sans-serif")

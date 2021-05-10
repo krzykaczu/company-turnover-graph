@@ -1,4 +1,4 @@
-import type { FunctionComponent } from "react";
+import type { FunctionComponent, Dispatch, SetStateAction } from "react";
 import { ResponsiveBar } from "@nivo/bar";
 import { useRouter } from "next/router";
 import {
@@ -12,7 +12,9 @@ export type CompData = (
 
 export const Comp: FunctionComponent<{
   data: CompData;
-}> = ({ data }) => {
+  hoveredCustomer?: string;
+  setHoveredCustomer?: Dispatch<SetStateAction<string>>;
+}> = ({ data, hoveredCustomer, setHoveredCustomer = () => "" }) => {
   const router = useRouter();
   return (
     <div className={comp}>
@@ -71,6 +73,16 @@ export const Comp: FunctionComponent<{
         motionDamping={15}
         onClick={(data) => {
           router.push(`/${data.data.client}`);
+        }}
+        onMouseEnter={(_data, event) => {
+          setHoveredCustomer(String(_data.data.client));
+          (event.target as SVGRectElement).style.fill = "#f47560";
+        }}
+        onMouseLeave={(_data, event) => {
+          if (_data.id !== "compared") {
+            setHoveredCustomer("");
+            (event.target as SVGRectElement).style.fill = "#97e3d5";
+          }
         }}
       />
     </div>

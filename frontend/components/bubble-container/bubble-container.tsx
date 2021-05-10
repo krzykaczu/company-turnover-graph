@@ -1,4 +1,4 @@
-import type { FunctionComponent } from "react";
+import type { FunctionComponent, Dispatch, SetStateAction } from "react";
 import { Bubble, BubbleData } from "../bubble";
 import type { WindowSize } from "../../utils/useWindowSize";
 import type { TurnoverByClient, TurnoverData } from "../types";
@@ -21,13 +21,22 @@ const makeDataD3Ready = ({
 export const BubbleContainer: FunctionComponent<{
   size: WindowSize;
   data: TurnoverData | undefined;
-}> = ({ size: { width, height } }, data) => {
+  hoveredCustomer: string;
+  setHoveredCustomer: Dispatch<SetStateAction<string>>;
+}> = ({
+  size: { width, height },
+  data,
+  hoveredCustomer,
+  setHoveredCustomer,
+}) => {
   return (
     <Bubble
       data={(data?.turnoverByClients || []).map((client: TurnoverByClient) =>
         makeDataD3Ready(client)
       )}
       size={[width / 2, height]}
+      hoveredCustomer={hoveredCustomer}
+      setHoveredCustomer={setHoveredCustomer}
     />
   );
 };
