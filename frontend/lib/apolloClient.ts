@@ -9,7 +9,7 @@ import { endpoint } from "../utils/endpoint";
 
 let apolloClient: ApolloClient<NormalizedCacheObject>;
 
-function createApolloClient() {
+function createApolloClient(): ApolloClient<NormalizedCacheObject> {
   return new ApolloClient({
     ssrMode: typeof window === "undefined", // set to true for SSR
     link: new HttpLink({
@@ -19,7 +19,10 @@ function createApolloClient() {
   });
 }
 
-export function initializeApollo(initialState: any = null) {
+export function initializeApollo(
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  initialState: any = null
+): ApolloClient<NormalizedCacheObject> {
   const _apolloClient = apolloClient ?? createApolloClient();
 
   // If your page has Next.js data fetching methods that use Apollo Client,
@@ -41,7 +44,10 @@ export function initializeApollo(initialState: any = null) {
   return _apolloClient;
 }
 
-export function useApollo(initialState: any) {
+export function useApollo(
+  // eslint-disable-next-line
+  initialState: any
+): ApolloClient<NormalizedCacheObject> {
   const store = useMemo(() => initializeApollo(initialState), [initialState]);
   return store;
 }

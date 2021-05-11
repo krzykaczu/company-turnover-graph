@@ -1,14 +1,11 @@
-import { Bubble, BubbleData } from "./bubble";
+import { Bubble, Props } from "./bubble";
 
 export default {
   component: Bubble,
   title: "Bubble",
 };
 
-const Template = (args: {
-  data: BubbleData[];
-  size: number[];
-}): JSX.Element => <Bubble {...args} />;
+const Template = (args: Props): JSX.Element => <Bubble {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

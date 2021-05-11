@@ -1,11 +1,12 @@
 import InvoiceTable from "./invoice-table";
 import type { InvoicesData } from "../types";
+import type { Story } from "@storybook/react";
 
 export default {
   component: InvoiceTable,
   title: "InvoiceTable",
   decorators: [
-    (Story) => (
+    (Story: Story): JSX.Element => (
       <div style={{ width: "300px", height: "300px" }}>
         <Story />
       </div>
@@ -13,7 +14,9 @@ export default {
   ],
 };
 
-const Template = (args: { data: InvoicesData }) => <InvoiceTable {...args} />;
+const Template = (args: { data: InvoicesData }): JSX.Element => (
+  <InvoiceTable {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {

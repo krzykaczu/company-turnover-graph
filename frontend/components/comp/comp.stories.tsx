@@ -1,10 +1,11 @@
 import { Comp, CompData } from "./comp";
+import type { Story } from "@storybook/react";
 
 export default {
   component: Comp,
   title: "Comp",
   decorators: [
-    (Story) => (
+    (Story: Story): JSX.Element => (
       <div style={{ width: "300px", height: "300px" }}>
         <Story />
       </div>
@@ -12,7 +13,7 @@ export default {
   ],
 };
 
-const Template = (args: { data: CompData }) => <Comp {...args} />;
+const Template = (args: { data: CompData }): JSX.Element => <Comp {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

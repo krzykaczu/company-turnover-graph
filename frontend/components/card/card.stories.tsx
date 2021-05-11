@@ -5,7 +5,7 @@ export default {
   title: "Card",
 };
 
-const Template = (args) => <Card {...args} />;
+const Template = (args): JSX.Element => <Card {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

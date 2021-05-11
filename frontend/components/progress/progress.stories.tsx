@@ -1,10 +1,11 @@
 import { Progress, ProgressData } from "./progress";
+import type { Story } from "@storybook/react";
 
 export default {
   component: Progress,
   title: "Progress",
   decorators: [
-    (Story) => (
+    (Story: Story): JSX.Element => (
       <div style={{ width: "300px", height: "300px" }}>
         <Story />
       </div>
@@ -12,7 +13,9 @@ export default {
   ],
 };
 
-const Template = (args: { data: ProgressData[] }) => <Progress {...args} />;
+const Template = (args: { data: ProgressData[] }): JSX.Element => (
+  <Progress {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {

@@ -11,7 +11,7 @@ export interface BubbleData {
   label: string;
 }
 
-interface Props {
+export interface Props {
   data: BubbleData[];
   size: number[];
   hoveredCustomer: string;

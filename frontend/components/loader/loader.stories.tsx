@@ -5,6 +5,6 @@ export default {
   title: "Loader",
 };
 
-const Template = () => <Loader />;
+const Template = (): JSX.Element => <Loader />;
 
 export const Default = Template.bind({});
