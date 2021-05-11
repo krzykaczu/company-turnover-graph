@@ -1,5 +1,5 @@
 import type { FunctionComponent, Dispatch, SetStateAction } from "react";
-import { Bubble, BubbleData } from "../bubble";
+import { Bubble, BubbleData } from "components/bubble";
 import type { WindowSize } from "../../utils/useWindowSize";
 import type { TurnoverByClient, TurnoverData } from "../types";
 

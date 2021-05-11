@@ -12,9 +12,9 @@ module.exports = {
     "\\.(css|less|scss|sass)$": "identity-obj-proxy",
   },
   moduleNameMapper: {
-    "^components$": "<rootDir>components",
-    "^components/(.*)$": "<rootDir>components/$1",
-    "^pages$": "<rootDir>pages",
-    "^pages/(.*)$": "<rootDir>pages/$1",
+    "^components$": "<rootDir>/src/components",
+    "^components/(.*)$": "<rootDir>/src/components/$1",
+    "^pages$": "<rootDir>/src/pages",
+    "^pages/(.*)$": "<rootDir>/src/pages/$1",
   },
 };

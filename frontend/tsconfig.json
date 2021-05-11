@@ -12,11 +12,18 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": false,
+    "isolatedModules": true,
     "noEmit": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "components/*": ["./src/components/*"],
+      "pages/*": ["./src/pages/*"],
+      "lib/*": ["./src/lib/*"],
+      "utils/*": ["./src/utils/*"]
+    }
   },
-  "include": ["pages", "components"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules"],
-  "types": ["./jest.globals.ts"]
+  "typings": ["./jest.globals.ts"]
 }
