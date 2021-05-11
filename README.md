@@ -62,5 +62,7 @@ kubectl delete --all pods,services,deployments,replicasets
 
 ## 2do
 
-- eslint
+- add eslint
+- comp labels
+- e2e tests
 - update frontend unit and integration tests

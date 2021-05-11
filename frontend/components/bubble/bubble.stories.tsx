@@ -5,9 +5,10 @@ export default {
   title: "Bubble",
 };
 
-const Template = (args: { data: BubbleData[]; size: number[] }) => (
-  <Bubble {...args} />
-);
+const Template = (args: {
+  data: BubbleData[];
+  size: number[];
+}): JSX.Element => <Bubble {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

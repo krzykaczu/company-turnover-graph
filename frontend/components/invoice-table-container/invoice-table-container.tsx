@@ -1,9 +1,6 @@
 import type { FunctionComponent } from "react";
 import InvoiceTable from "../invoice-table";
-import {
-  GET_INVOICES_BY_CLIENT,
-  GET_ALL_INVOICES,
-} from "../../utils/gql-queries";
+import { GET_ALL_INVOICES } from "../../utils/gql-queries";
 import Loader from "../loader";
 import { useQuery } from "@apollo/client";
 import type { InvoicesData } from "../types";

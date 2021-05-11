@@ -1,4 +1,6 @@
 import Head from "next/head";
+import type { FunctionComponent } from "react";
+import { GetStaticProps } from "next";
 
 import {
   GET_CLIENTS_AND_TURNOVERS,
@@ -7,7 +9,7 @@ import {
 import { initializeApollo } from "../lib/apolloClient";
 import { CustomerSelection } from "../components/customer-selection";
 
-export default function Home() {
+const Home: FunctionComponent = () => {
   return (
     <div>
       <Head>
@@ -17,8 +19,8 @@ export default function Home() {
       <CustomerSelection />
     </div>
   );
-}
-export async function getStaticProps() {
+};
+export const getStaticProps: GetStaticProps = async () => {
   const apolloClient = initializeApollo();
 
   await apolloClient.query({
@@ -34,4 +36,6 @@ export async function getStaticProps() {
     },
     revalidate: 1,
   };
-}
+};
+
+export default Home;

@@ -4,7 +4,7 @@ export type WindowSize = {
   height: number;
 };
 
-export function useWindowSize() {
+export function useWindowSize(): WindowSize {
   const [windowSize, setWindowSize] = useState<WindowSize>({
     width: 0,
     height: 0,
@@ -12,7 +12,7 @@ export function useWindowSize() {
 
   useEffect(() => {
     // Handler to call on window resize
-    function handleResize() {
+    function handleResize(): void {
       // Set window width/height to state
       setWindowSize({
         width: window.innerWidth,

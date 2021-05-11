@@ -1,15 +1,13 @@
 import "../styles/globals.css";
 import { ApolloProvider } from "@apollo/client";
 import { useApollo } from "../lib/apolloClient";
-import React from "react";
+import type { Component, FunctionComponent } from "react";
 
-export default function App({
-  Component,
-  pageProps,
-}: {
-  Component: typeof React.Component;
+const App: FunctionComponent<{
+  Component: typeof Component;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   pageProps: { initialApolloState: any };
-}) {
+}> = ({ Component, pageProps }) => {
   const apolloClient = useApollo(pageProps.initialApolloState);
 
   return (
@@ -17,4 +15,5 @@ export default function App({
       <Component {...pageProps} />
     </ApolloProvider>
   );
-}
+};
+export default App;

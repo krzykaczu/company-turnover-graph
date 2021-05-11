@@ -1,6 +1,6 @@
-import { createStyles, Theme } from "@material-ui/core";
+import { createStyles, StyleRules } from "@material-ui/core";
 
-export const styles = (theme: Theme) =>
+export const styles = (): StyleRules =>
   createStyles({
     grid: {
       maxHeight: "100%",

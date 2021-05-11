@@ -4,7 +4,6 @@ import { useQuery } from "@apollo/client";
 
 import {
   layout,
-  menu,
   dashboard,
   stats,
   progress,
@@ -19,7 +18,6 @@ import { Progress } from "../progress";
 import { Comp } from "../comp";
 import {
   GET_INVOICES_BY_CLIENT,
-  GET_ALL_INVOICES,
   GET_CLIENTS_AND_TURNOVERS,
 } from "../../utils/gql-queries";
 import {
@@ -33,7 +31,7 @@ import type { TurnoverData, InvoicesData } from "../types";
 export const Dashboard: FunctionComponent<{ client: string }> = ({
   client,
 }) => {
-  const { loading, error, data: invoicesByClient } = useQuery<{
+  const { data: invoicesByClient } = useQuery<{
     invoicesByClient: InvoicesData;
   }>(GET_INVOICES_BY_CLIENT, {
     variables: {

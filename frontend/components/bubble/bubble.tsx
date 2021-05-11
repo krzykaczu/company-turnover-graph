@@ -26,13 +26,13 @@ export class Bubble extends Component<Props> {
     this.svgRef = createRef();
     this.drawBubble = this.drawBubble.bind(this);
   }
-  componentDidMount() {
+  componentDidMount(): void {
     this.drawBubble();
   }
-  componentDidUpdate() {
+  componentDidUpdate(): void {
     this.drawBubble();
   }
-  drawBubble = () => {
+  drawBubble = (): void => {
     if (this.svgRef.current) {
       const svg = d3.select(this.svgRef.current);
       const { setHoveredCustomer, hoveredCustomer } = this.props;
@@ -67,12 +67,12 @@ export class Bubble extends Component<Props> {
         .style("fill", function (d) {
           return d.label === hoveredCustomer ? "#f47560" : "#97e3d5";
         })
-        .on("mouseenter", function (d) {
+        .on("mouseenter", function () {
           d3.select(this).style("fill", "#f47560");
           const text = this.querySelector("text");
           setHoveredCustomer(text ? String(text.textContent) : "");
         })
-        .on("mouseleave", function (d) {
+        .on("mouseleave", function () {
           d3.select(this).style("fill", "#97e3d5");
           setHoveredCustomer("");
         });
@@ -85,7 +85,7 @@ export class Bubble extends Component<Props> {
         .append("text")
         .attr("dy", ".2em")
         .style("text-anchor", "middle")
-        .text(function (d, i) {
+        .text(function (d) {
           return d.label.substring(0, d.r / 3);
         })
         .attr("font-family", "sans-serif")
@@ -108,7 +108,7 @@ export class Bubble extends Component<Props> {
         .attr("fill", "white");
     }
   };
-  render() {
+  render(): JSX.Element {
     return (
       <div>
         <svg
