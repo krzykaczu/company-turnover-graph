@@ -1,11 +1,12 @@
 import { Bubble, Props } from "./bubble";
+import type { Story } from "@storybook/react";
 
 export default {
   component: Bubble,
   title: "Bubble",
 };
 
-const Template = (args: Props): JSX.Element => <Bubble {...args} />;
+const Template: Story<Props> = (args) => <Bubble {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

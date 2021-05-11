@@ -13,7 +13,7 @@ export default {
   ],
 };
 
-const Template = (args: StatsProps): JSX.Element => <Stats {...args} />;
+const Template: Story<StatsProps> = (args) => <Stats {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

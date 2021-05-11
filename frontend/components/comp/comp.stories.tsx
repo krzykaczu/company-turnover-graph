@@ -13,7 +13,7 @@ export default {
   ],
 };
 
-const Template = (args: { data: CompData }): JSX.Element => <Comp {...args} />;
+const Template: Story<{ data: CompData }> = (args) => <Comp {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

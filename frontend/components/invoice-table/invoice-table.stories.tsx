@@ -14,7 +14,7 @@ export default {
   ],
 };
 
-const Template = (args: { data: InvoicesData }): JSX.Element => (
+const Template: Story<{ data: InvoicesData }> = (args) => (
   <InvoiceTable {...args} />
 );
 

@@ -13,7 +13,7 @@ export default {
   ],
 };
 
-const Template = (args: { data: ProgressData[] }): JSX.Element => (
+const Template: Story<{ data: ProgressData[] }> = (args) => (
   <Progress {...args} />
 );
 
