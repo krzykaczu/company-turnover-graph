@@ -22,7 +22,7 @@ function createApolloClient(): ApolloClient<NormalizedCacheObject> {
 export function initializeApollo(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   initialState: any = null
-): ApolloClient<NormalizedCacheObject> {
+): ReturnType<typeof createApolloClient> {
   const _apolloClient = apolloClient ?? createApolloClient();
 
   // If your page has Next.js data fetching methods that use Apollo Client,
@@ -47,7 +47,7 @@ export function initializeApollo(
 export function useApollo(
   // eslint-disable-next-line
   initialState: any
-): ApolloClient<NormalizedCacheObject> {
+): ReturnType<typeof initializeApollo> {
   const store = useMemo(() => initializeApollo(initialState), [initialState]);
   return store;
 }

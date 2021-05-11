@@ -12,10 +12,11 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "noEmit": true,
     "jsx": "preserve"
   },
-  "include": ["pages"],
-  "exclude": ["node_modules"]
+  "include": ["pages", "components"],
+  "exclude": ["node_modules"],
+  "types": ["./jest.globals.ts"]
 }
