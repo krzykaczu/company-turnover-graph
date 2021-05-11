@@ -23,7 +23,6 @@
       "utils/*": ["./src/utils/*"]
     }
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules"],
-  "typings": ["./jest.globals.ts"]
+  "include": ["src/**/*", "./jest.globals.ts"],
+  "exclude": ["node_modules"]
 }

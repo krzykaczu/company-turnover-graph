@@ -2,7 +2,7 @@ module.exports = {
   clearMocks: true,
   testPathIgnorePatterns: ["<rootDir>/.next/", "<rootDir>/node_modules/"],
   setupFilesAfterEnv: ["<rootDir>/jest.setup.tsx"],
-  moduleDirectories: ["<rootDir>/node_modules"],
+  moduleDirectories: ["<rootDir>/node_modules", "<rootDir>"],
   moduleFileExtensions: ["js", "ts", "tsx"],
   globals: {
     render: require("@testing-library/react").render,

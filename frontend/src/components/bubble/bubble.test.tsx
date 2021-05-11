@@ -13,6 +13,7 @@ describe("Bubble", () => {
         setHoveredCustomer={() => {}}
       />
     );
+    expect(queryAllByRole("link")).toHaveLength(2);
   });
 });
 
