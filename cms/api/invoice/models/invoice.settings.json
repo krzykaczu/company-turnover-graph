@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "invoice",
+  "info": {
+    "name": "invoice"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "invoiceId": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "status": {
+      "type": "string"
+    },
+    "issueDate": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "warehouse": {
+      "type": "string"
+    },
+    "client": {
+      "type": "string",
+      "required": true
+    },
+    "city": {
+      "type": "string"
+    },
+    "net": {
+      "required": true,
+      "type": "decimal"
+    },
+    "gross": {
+      "type": "decimal",
+      "required": true
+    }
+  }
+}
