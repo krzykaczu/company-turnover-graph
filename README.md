@@ -1,5 +1,8 @@
 # Company Turnover Graph App
 
+Comarch ERP Optima csv-reports to D3-charts converter.
+Underway baing a fully headless solution.
+
 ![screencast](./assets/screencast.gif)
 
 ## Local deployment via docker compose

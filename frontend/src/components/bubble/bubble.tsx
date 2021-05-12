@@ -48,7 +48,7 @@ export class Bubble extends Component<Props> {
         .attr(
           "transform",
           `translate(${this.props.size[0] / 2},
-          ${this.props.size[1] / 2})scale(0.23)`
+          ${this.props.size[1] / 2})scale(0.21)`
         );
 
       const node = circles
