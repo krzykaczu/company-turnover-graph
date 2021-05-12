@@ -9,9 +9,9 @@ module.exports = {
   },
   transform: {
     "\\.[jt]sx?$": "<rootDir>/node_modules/babel-jest",
-    "\\.(css|less|scss|sass)$": "identity-obj-proxy",
   },
   moduleNameMapper: {
+    "\\.(css|less|scss|sass)$": "identity-obj-proxy",
     "^components$": "<rootDir>/src/components",
     "^components/(.*)$": "<rootDir>/src/components/$1",
     "^pages$": "<rootDir>/src/pages",

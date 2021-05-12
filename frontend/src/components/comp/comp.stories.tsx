@@ -1,5 +1,7 @@
 import { Comp, CompData } from "./comp";
 import type { Story } from "@storybook/react";
+import mocks from "./mocks";
+const { data } = mocks;
 
 export default {
   component: Comp,
@@ -17,8 +19,5 @@ const Template: Story<{ data: CompData }> = (args) => <Comp {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  data: [
-    { client: "X", other: 1 },
-    { client: "Y", compared: 10 },
-  ],
+  data,
 };
