@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import fetch from "cross-fetch";
 import {
   ApolloClient,
   HttpLink,
@@ -14,6 +15,7 @@ function createApolloClient(): ApolloClient<NormalizedCacheObject> {
     ssrMode: typeof window === "undefined", // set to true for SSR
     link: new HttpLink({
       uri: endpoint,
+      fetch,
     }),
     cache: new InMemoryCache(),
   });
