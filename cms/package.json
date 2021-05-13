@@ -2,7 +2,7 @@
   "name": "cms",
   "private": true,
   "version": "0.1.0",
-  "description": "A Strapi application",
+  "description": "cms",
   "scripts": {
     "develop": "strapi develop",
     "start": "strapi start",
@@ -24,7 +24,7 @@
     "strapi-utils": "3.6.2"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": ""
   },
   "strapi": {
     "uuid": "38352ce2-c1ef-4bb7-8c82-879bff9f5cea"
