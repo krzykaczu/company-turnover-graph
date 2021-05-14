@@ -35,7 +35,7 @@ export class Bubble extends Component<Props> {
   drawBubble = (): void => {
     if (this.svgRef.current) {
       const svg = d3.select(this.svgRef.current);
-      const { setHoveredCustomer, hoveredCustomer } = this.props;
+      const { setHoveredCustomer, hoveredCustomer, size, data } = this.props;
 
       svg.select("g").remove();
 
@@ -47,13 +47,13 @@ export class Bubble extends Component<Props> {
         .attr("class", "circles")
         .attr(
           "transform",
-          `translate(${this.props.size[0] / 2},
-          ${this.props.size[1] / 2})scale(0.21)`
+          `translate(${size[0] / 2},
+          ${size[1] / 2})scale(0.21)`
         );
 
       const node = circles
         .selectAll(".node")
-        .data(d3.packSiblings(this.props.data))
+        .data(d3.packSiblings(data))
         .enter()
         .append("a")
         .attr("xlink:href", function (d) {

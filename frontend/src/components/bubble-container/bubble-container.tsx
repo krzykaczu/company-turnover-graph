@@ -3,7 +3,7 @@ import { Bubble, BubbleData } from "components/bubble";
 import type { WindowSize } from "../../utils/useWindowSize";
 import type { TurnoverByClient, TurnoverData } from "../types";
 
-const linearMappingOfBubblesR = (r: number): number => Math.sqrt(r);
+const linearMappingOfBubblesR = (r: number): number => Math.sqrt(Math.abs(r));
 
 const makeDataD3Ready = ({
   sumOfInvoices,
