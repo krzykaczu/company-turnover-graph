@@ -15,10 +15,10 @@ import { styles } from "./styles";
 
 const InvoiceTable: FunctionComponent<Props> = (props: Props) => {
   const { classes, data } = props;
-  const rows = data.map(({ id, issueDate, net }, index) => {
+  const rows = data.map(({ invoiceId, issueDate, net }, index) => {
     return {
       id: index + 1,
-      invoiceId: id,
+      invoiceId,
       issueDate: issueDate,
       netAmount: net,
     };

@@ -28,7 +28,9 @@ module.exports = async () => {
   }
 
   // populate db with data from csv-parser service
-  const { data } = await axios.get("http://0.0.0.0:5000");
+  const { data } = await axios.get(
+    `http://${process.env.CSV_PARSER_HOST || "0.0.0.0"}:5000`
+  );
   if (data && Array.isArray(data)) {
     one_by_one(
       data,

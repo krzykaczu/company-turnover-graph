@@ -5,7 +5,7 @@ export type TurnoverData = {
 };
 
 export type InvoicesData = Array<{
-  id: string;
+  invoiceId: string;
   issueDate: string;
   net: number;
   client: string;
