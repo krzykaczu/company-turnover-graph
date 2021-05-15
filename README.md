@@ -1,7 +1,6 @@
 # Company Turnover Graph App
 
-Comarch ERP Optima csv-reports to D3-charts converter.
-Underway baing a fully headless solution.
+For the time being the app works as the Comarch ERP Optima csv format of reports and the parsed and converted reports data is the data source.
 
 ![screencast](./assets/screencast.gif)
 
@@ -9,7 +8,7 @@ Underway baing a fully headless solution.
 
 `docker-compose up --build`
 
-## K8s deployment using local registry
+## K8s deployment using local registry - old version - to be updated
 
 ```bash
 minikube start
@@ -65,7 +64,9 @@ kubectl delete --all pods,services,deployments,replicasets
 
 ## 2do
 
-- add eslint
-- comp labels
+- bug: cms data populating and duplicated db indexes
 - e2e tests
-- update frontend unit and integration tests
+- k8s
+- jenkins
+- improve styles
+- strapi cms plugin to upload other files as the data source
