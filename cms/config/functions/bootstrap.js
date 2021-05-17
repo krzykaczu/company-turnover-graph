@@ -22,9 +22,7 @@ module.exports = async () => {
   //delete all saved invoices
   const invoices = await strapi.query("invoice").find();
   if (invoices && Array.isArray(invoices)) {
-    one_by_one(invoices, ({ _id }) => {
-      strapi.query("invoice").delete({ _id });
-    });
+    strapi.query("invoice").delete();
   }
 
   // populate db with data from csv-parser service

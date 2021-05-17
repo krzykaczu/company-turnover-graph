@@ -67,6 +67,8 @@ kubectl delete --all pods,services,deployments,replicasets
 - bug: cms data populating and duplicated db indexes
 - e2e tests
 - k8s
+- deployment
+- infrastruture provisioning
 - jenkins
 - improve styles
 - strapi cms plugin to upload other files as the data source
