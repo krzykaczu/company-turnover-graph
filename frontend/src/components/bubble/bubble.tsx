@@ -59,6 +59,7 @@ export class Bubble extends Component<Props> {
         .attr("xlink:href", function (d) {
           return `/${d.label}`;
         })
+        .attr("data-cy", "all-clients")
         .append("g")
         .attr("class", "node")
         .attr("transform", function (d) {

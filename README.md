@@ -64,7 +64,7 @@ kubectl delete --all pods,services,deployments,replicasets
 
 ## 2do
 
-- bug: cms data populating and duplicated db indexes
+- strapi to ts
 - e2e tests
 - k8s
 - deployment
