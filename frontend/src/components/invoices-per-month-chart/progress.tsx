@@ -2,15 +2,15 @@ import type { FunctionComponent } from "react";
 import { ResponsiveBar } from "@nivo/bar";
 import { MONTHS } from "../dashboard/helpers";
 
-export interface ProgressData {
+export interface InvoicesPerMonthChartData {
   index: number;
   month: typeof MONTHS[number];
   sumOfInvoices: number;
 }
 
-export const Progress: FunctionComponent<{ data: ProgressData[] }> = ({
-  data,
-}) => (
+export const InvoicesPerMonthChart: FunctionComponent<{
+  data: InvoicesPerMonthChartData[];
+}> = ({ data }) => (
   <ResponsiveBar
     data={data}
     keys={["0", "1", "2", "3", "4", "sumOfInvoices"]}

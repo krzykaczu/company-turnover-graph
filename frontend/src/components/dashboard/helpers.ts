@@ -1,6 +1,6 @@
 import type { TurnoverData, InvoicesData } from "../types";
-import type { CompData } from "../comp";
-import type { ProgressData } from "../progress";
+import type { ClientRanksChartData } from "../client-ranks-chart";
+import type { InvoicesPerMonthChartData } from "../invoices-per-month-chart";
 
 export const MONTHS = [
   "jan",
@@ -20,7 +20,7 @@ export const MONTHS = [
 export const parseCompData = (
   clientName: string,
   data: TurnoverData
-): CompData => {
+): ClientRanksChartData => {
   const sortedDesc = [...data.turnoverByClients].sort(
     (a, b) => a.sumOfInvoices - b.sumOfInvoices
   );
@@ -40,7 +40,7 @@ export const parseCompData = (
 export const parseCompAllData = (
   data: TurnoverData,
   hoveredCustomer: string
-): CompData => {
+): ClientRanksChartData => {
   const sortedDesc = [...data.turnoverByClients].sort(
     (a, b) => a.sumOfInvoices - b.sumOfInvoices
   );
@@ -53,7 +53,7 @@ export const parseCompAllData = (
 
 export const parseProgressData = (data: {
   invoicesByClient: InvoicesData;
-}): ProgressData[] => {
+}): InvoicesPerMonthChartData[] => {
   return data.invoicesByClient
     .reduce(
       (acc, cur) => {

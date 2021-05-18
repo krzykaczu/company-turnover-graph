@@ -1,14 +1,14 @@
-import { Bubble, Props } from "./bubble";
+import { ClientRanksBubbleChart, Props } from "./client-ranks-bubble-chart";
 import type { Story } from "@storybook/react";
 import mocks from "./mocks";
 const { data, size } = mocks;
 
 export default {
-  component: Bubble,
+  component: ClientRanksBubbleChart,
   title: "Bubble",
 };
 
-const Template: Story<Props> = (args) => <Bubble {...args} />;
+const Template: Story<Props> = (args) => <ClientRanksBubbleChart {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

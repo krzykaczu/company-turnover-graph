@@ -1,16 +1,15 @@
-import { Bubble } from "./bubble";
+import { ClientRanksBubbleChart } from "./client-ranks-bubble-chart";
 import mocks from "./mocks";
 const { data, size } = mocks;
 
-describe("Bubble", () => {
+describe("ClientRanksBubbleChart", () => {
   it("renders links", () => {
     const { queryAllByRole } = render(
-      <Bubble
+      <ClientRanksBubbleChart
         data={data}
         size={size}
         hoveredCustomer=""
-        // eslint-disable-next-line @typescript-eslint/no-empty-function
-        setHoveredCustomer={() => {}}
+        setHoveredCustomer={() => ""}
       />
     );
     expect(queryAllByRole("link")).toHaveLength(2);

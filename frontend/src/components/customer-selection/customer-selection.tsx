@@ -1,6 +1,6 @@
 import { FunctionComponent, useState } from "react";
-import { BubbleContainer } from "../bubble-container";
-import { CompAll } from "../comp-all";
+import { AllClientsBubbleChart } from "../all-clients-bubble-chart";
+import { AllClientsRanksChart } from "../all-clients-ranks-chart";
 import { useWindowSize } from "../../utils/useWindowSize";
 import { GET_CLIENTS_AND_TURNOVERS } from "../../utils/gql-queries";
 import { useQuery } from "@apollo/client";
@@ -21,13 +21,13 @@ export const CustomerSelection: FunctionComponent = () => {
   if (error) return <div>{`Error! ${error.message}`}</div>;
   return (
     <div className={customerSelection}>
-      <CompAll
+      <AllClientsRanksChart
         size={size}
         data={data}
         hoveredCustomer={hoveredCustomer}
         setHoveredCustomer={setHoveredCustomer}
       />
-      <BubbleContainer
+      <AllClientsBubbleChart
         size={size}
         data={data}
         hoveredCustomer={hoveredCustomer}

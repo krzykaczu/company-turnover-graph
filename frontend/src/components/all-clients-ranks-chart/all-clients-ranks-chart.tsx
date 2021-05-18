@@ -1,10 +1,10 @@
 import type { FunctionComponent, Dispatch, SetStateAction } from "react";
-import { Comp } from "../comp";
+import { ClientRanksChart } from "../client-ranks-chart";
 import { parseCompAllData } from "../dashboard/helpers";
 import type { TurnoverData } from "../types";
 import type { WindowSize } from "../../utils/useWindowSize";
 
-export const CompAll: FunctionComponent<{
+export const AllClientsRanksChart: FunctionComponent<{
   size: WindowSize;
   data: TurnoverData | undefined;
   hoveredCustomer: string;
@@ -17,7 +17,7 @@ export const CompAll: FunctionComponent<{
 }) => {
   return (
     <div style={{ width: `${width / 2}px`, height: `${height}px` }}>
-      <Comp
+      <ClientRanksChart
         data={data ? parseCompAllData(data, hoveredCustomer) : []}
         setHoveredCustomer={setHoveredCustomer}
       />

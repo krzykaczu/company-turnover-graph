@@ -2,21 +2,21 @@ import type { FunctionComponent, Dispatch, SetStateAction } from "react";
 import { ResponsiveBar } from "@nivo/bar";
 import { useRouter } from "next/router";
 import {
-  comp, // @ts-ignore
-} from "./comp.module.scss";
+  clientRanksChart, // @ts-ignore
+} from "./client-ranks-chart.module.scss";
 
-export type CompData = (
+export type ClientRanksChartData = (
   | { client: string; other: number }
   | { client: string; compared: number }
 )[];
 
-export const Comp: FunctionComponent<{
-  data: CompData;
+export const ClientRanksChart: FunctionComponent<{
+  data: ClientRanksChartData;
   setHoveredCustomer?: Dispatch<SetStateAction<string>>;
 }> = ({ data, setHoveredCustomer = () => "" }) => {
   const router = useRouter();
   return (
-    <div className={comp}>
+    <div className={clientRanksChart}>
       <ResponsiveBar
         data={data}
         keys={["1", "compared", "3", "4", "5", "other"]}

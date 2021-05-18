@@ -1,5 +1,8 @@
 import type { FunctionComponent, Dispatch, SetStateAction } from "react";
-import { Bubble, BubbleData } from "components/bubble";
+import {
+  ClientRanksBubbleChart,
+  ClientRanksBubbleChartData,
+} from "components/client-ranks-bubble-chart";
 import type { WindowSize } from "../../utils/useWindowSize";
 import type { TurnoverByClient, TurnoverData } from "../types";
 
@@ -8,7 +11,7 @@ const linearMappingOfBubblesR = (r: number): number => Math.sqrt(Math.abs(r));
 const makeDataD3Ready = ({
   sumOfInvoices,
   client,
-}: TurnoverByClient): BubbleData => {
+}: TurnoverByClient): ClientRanksBubbleChartData => {
   return {
     r: linearMappingOfBubblesR(sumOfInvoices),
     x: 0,
@@ -18,7 +21,7 @@ const makeDataD3Ready = ({
   };
 };
 
-export const BubbleContainer: FunctionComponent<{
+export const AllClientsBubbleChart: FunctionComponent<{
   size: WindowSize;
   data: TurnoverData | undefined;
   hoveredCustomer: string;
@@ -30,7 +33,7 @@ export const BubbleContainer: FunctionComponent<{
   setHoveredCustomer,
 }) => {
   return (
-    <Bubble
+    <ClientRanksBubbleChart
       data={(data?.turnoverByClients || []).map((client: TurnoverByClient) =>
         makeDataD3Ready(client)
       )}

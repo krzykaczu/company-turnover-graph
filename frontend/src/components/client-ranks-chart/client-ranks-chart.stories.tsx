@@ -1,11 +1,11 @@
-import { Comp, CompData } from "./comp";
+import { ClientRanksChart, ClientRanksChartData } from "./client-ranks-chart";
 import type { Story } from "@storybook/react";
 import mocks from "./mocks";
 const { data } = mocks;
 
 export default {
-  component: Comp,
-  title: "Comp",
+  component: ClientRanksChart,
+  title: "ClientRanksChart",
   decorators: [
     (Story: Story): JSX.Element => (
       <div style={{ width: "300px", height: "300px" }}>
@@ -15,7 +15,9 @@ export default {
   ],
 };
 
-const Template: Story<{ data: CompData }> = (args) => <Comp {...args} />;
+const Template: Story<{ data: ClientRanksChartData }> = (args) => (
+  <ClientRanksChart {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {

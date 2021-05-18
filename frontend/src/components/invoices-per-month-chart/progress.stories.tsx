@@ -1,8 +1,8 @@
-import { Progress, ProgressData } from "./progress";
+import { InvoicesPerMonthChart, InvoicesPerMonthChartData } from "./progress";
 import type { Story } from "@storybook/react";
 
 export default {
-  component: Progress,
+  component: InvoicesPerMonthChart,
   title: "Progress",
   decorators: [
     (Story: Story): JSX.Element => (
@@ -13,8 +13,8 @@ export default {
   ],
 };
 
-const Template: Story<{ data: ProgressData[] }> = (args) => (
-  <Progress {...args} />
+const Template: Story<{ data: InvoicesPerMonthChartData[] }> = (args) => (
+  <InvoicesPerMonthChart {...args} />
 );
 
 export const Default = Template.bind({});

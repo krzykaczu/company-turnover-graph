@@ -14,8 +14,8 @@ import {
 import { Card } from "../card";
 import { Stats } from "../stats";
 import InvoiceTableContainer from "../invoice-table-container";
-import { Progress } from "../progress";
-import { Comp } from "../comp";
+import { InvoicesPerMonthChart } from "../invoices-per-month-chart";
+import { ClientRanksChart } from "../client-ranks-chart";
 import {
   GET_INVOICES_BY_CLIENT,
   GET_CLIENTS_AND_TURNOVERS,
@@ -59,12 +59,12 @@ export const Dashboard: FunctionComponent<{ client: string }> = ({
           />
         </Card>
         <Card className={progress}>
-          <Progress
+          <InvoicesPerMonthChart
             data={invoicesByClient ? parseProgressData(invoicesByClient) : []}
           />
         </Card>
         <Card className={comp}>
-          <Comp
+          <ClientRanksChart
             data={turnoverData ? parseCompData(client, turnoverData) : []}
           />
         </Card>

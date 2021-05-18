@@ -3,7 +3,7 @@ import * as d3 from "d3";
 
 import { formatInPLN } from "../../utils/helpers";
 
-export interface BubbleData {
+export interface ClientRanksBubbleChartData {
   r: number;
   x: number;
   y: number;
@@ -12,13 +12,13 @@ export interface BubbleData {
 }
 
 export interface Props {
-  data: BubbleData[];
+  data: ClientRanksBubbleChartData[];
   size: number[];
   hoveredCustomer: string;
   setHoveredCustomer: Dispatch<SetStateAction<string>>;
 }
 
-export class Bubble extends Component<Props> {
+export class ClientRanksBubbleChart extends Component<Props> {
   private svgRef: React.RefObject<SVGSVGElement>;
 
   constructor(props: Props) {
