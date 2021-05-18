@@ -2,69 +2,6 @@
 version: "3"
 
 services:
-  db:
-    image: mongo:4.2.8
-    volumes:
-      - dbdata:/data/db
-    ports:
-      - 27017:27017
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: password
-
-  csv-parser:
-    build:
-      context: .
-      dockerfile: docker/csv-parser/Dockerfile
-    ports:
-      - "5000:5000"
-    container_name: csv-parser
-
-  backend:
-    build:
-      context: .
-      dockerfile: docker/backend/Dockerfile
-    volumes:
-      - ./backend:/app
-    ports:
-      - "4000:4000"
-    environment:
-      - ENDPOINT=csv-parser
-    container_name: backend
-
-  cms:
-    build:
-      context: .
-      dockerfile: docker/cms/Dockerfile
-    ports:
-      - "1337:1337"
-    container_name: cms
-    environment:
-      DATABASE_HOST: db
-      DATABASE_PORT: 27017
-      DATABASE_NAME: cms
-      DATABASE_USERNAME: root
-      DATABASE_PASSWORD: password
-      CSV_PARSER_HOST: csv-parser
-    depends_on:
-      - csv-parser
-      - db
-
-  frontend:
-    build:
-      context: .
-      dockerfile: docker/frontend/Dockerfile
-    volumes:
-      - ./frontend:/app
-    ports:
-      - "3000:3000"
-    environment:
-      - ENDPOINT=cms
-    container_name: frontend
-    depends_on:
-      - cms
-    stdin_open: true
-
   e2e:
     image: "cypress/included:7.3.0"
     depends_on:
@@ -74,6 +11,3 @@ services:
     working_dir: /e2e
     volumes:
       - ./frontend:/e2e
-
-volumes:
-  dbdata:
