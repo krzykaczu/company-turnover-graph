@@ -8,6 +8,10 @@ For the time being the app works as the Comarch ERP Optima csv format of reports
 
 `docker-compose up --build`
 
+## Run tests in a container
+
+`docker-compose -f docker-compose.test.yml up --build --exit-code-from e2e`
+
 ## K8s deployment using local registry - old version - to be updated
 
 ```bash

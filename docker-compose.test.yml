@@ -65,5 +65,15 @@ services:
       - cms
     stdin_open: true
 
+  e2e:
+    image: "cypress/included:7.3.0"
+    depends_on:
+      - frontend
+    environment:
+      - CYPRESS_baseUrl=http://frontend:3000
+    working_dir: /e2e
+    volumes:
+      - ./frontend:/e2e
+
 volumes:
   dbdata:
