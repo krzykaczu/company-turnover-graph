@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "outDir": "./",
+    "allowJs": true,
+    "target": "ES2018",
+    "module": "commonjs",
+    "downlevelIteration": true,
+    "resolveJsonModule": true,
+    "typeRoots": ["./node_modules/@types"],
+    "types": ["node"]
+  },
+  "include": ["src/**/*", "./index.d.ts"],
+  "exclude": ["node_modules"]
+}
