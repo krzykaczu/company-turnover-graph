@@ -12,7 +12,7 @@
     "test": "jest",
     "e2e:open": "cypress open",
     "e2e:run": "cypress run",
-    "e2e:run:spec": "npm run cypress:run -- --headless --spec \"cypress/integration/sample_spec.ts\""
+    "e2e:run:spec": "npm run e2e:run -- --headless --spec \"cypress/integration/sample_spec.ts\""
   },
   "dependencies": {
     "@apollo/client": "^3.3.11",

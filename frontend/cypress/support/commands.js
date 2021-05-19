@@ -26,3 +26,23 @@
 Cypress.Commands.add("checkNumberOfClients", (numberOfClients) => {
   cy.get("[data-cy=all-clients]").should("have.length", numberOfClients);
 });
+/* Cypress.Commands.add("stubGraphQL", (graphQlFixture) => {
+  cy.fixture(graphQlFixture).then((mockedData) => {
+    cy.on("window:before:load", (win) => {
+      function fetch(path, { body }) {
+        const { operationName } = JSON.parse(body);
+        return responseStub(mockedData[operationName]);
+      }
+      cy.stub(win, "fetch", fetch)
+        .withArgs("0.0.0.0:1337/graphql")
+        .as("graphql");
+    });
+  });
+});
+
+const responseStub = (result) =>
+  Promise.resolve({
+    json: () => Promise.resolve(result),
+    text: () => Promise.resolve(JSON.stringify(result)),
+    ok: true,
+  }); */
