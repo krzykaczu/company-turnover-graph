@@ -4,8 +4,8 @@
   "version": "0.1.0",
   "description": "cms",
   "scripts": {
-    "develop": "strapi develop",
-    "start": "strapi start",
+    "develop": "npm run build-ts && strapi develop",
+    "start": "npm run build-ts && strapi start",
     "build": "strapi build",
     "strapi": "strapi",
     "build-ts": "tsc"
