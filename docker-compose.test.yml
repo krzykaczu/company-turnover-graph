@@ -10,4 +10,4 @@ services:
       - CYPRESS_baseUrl=http://frontend:3000
     working_dir: /e2e
     volumes:
-      - ./frontend:/e2e
+      - ./e2e:/e2e

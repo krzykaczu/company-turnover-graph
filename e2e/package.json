@@ -1,0 +1,17 @@
+{
+  "name": "e2e",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "e2e:open": "cypress open",
+    "e2e:run": "cypress run",
+    "e2e:run:spec": "npm run e2e:run -- --headless --spec \"cypress/integration/sample_spec.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^7.3.0"
+  }
+}
