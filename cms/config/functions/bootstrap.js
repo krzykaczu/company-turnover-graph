@@ -19,40 +19,50 @@ const one_by_one = (arr, syncFn) =>
   );
 
 module.exports = async () => {
-  //delete all saved invoices
-  const invoices = await strapi.query("invoice").find();
-  if (invoices && Array.isArray(invoices)) {
-    strapi.query("invoice").delete();
-  }
+  const shouldEmptyDb = true;
+  const shouldPopulateDb = true;
 
-  // populate db with data from csv-parser service
-  const { data } = await axios.get(
-    `http://${process.env.CSV_PARSER_HOST || "0.0.0.0"}:5000`
-  );
-  if (data && Array.isArray(data)) {
-    one_by_one(
-      data,
-      ({
-        id: invoiceId,
-        status,
-        issueDate,
-        warehouse,
-        client,
-        city,
-        net,
-        gross,
-      }) => {
-        strapi.query("invoice").create({
-          invoiceId,
-          status,
-          issueDate,
-          warehouse,
-          client,
-          city,
-          net,
-          gross,
+  const invoices = await strapi.query("invoice").find();
+
+  Promise.resolve()
+    .then(async () => {
+      //delete all saved invoices
+      if (shouldEmptyDb && invoices && Array.isArray(invoices)) {
+        await one_by_one(invoices, ({ _id }) => {
+          strapi.query("invoice").delete({ _id });
         });
       }
-    );
-  }
+    })
+    .then(async () => {
+      // populate db with data from csv-parser service
+      const { data } = await axios.get(
+        `http://${process.env.CSV_PARSER_HOST || "0.0.0.0"}:5000`
+      );
+      if (shouldPopulateDb && data && Array.isArray(data)) {
+        await one_by_one(
+          data,
+          ({
+            id: invoiceId,
+            status,
+            issueDate,
+            warehouse,
+            client,
+            city,
+            net,
+            gross,
+          }) => {
+            strapi.query("invoice").create({
+              invoiceId,
+              status,
+              issueDate,
+              warehouse,
+              client,
+              city,
+              net,
+              gross,
+            });
+          }
+        );
+      }
+    });
 };
